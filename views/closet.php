@@ -28,10 +28,19 @@
 
 		<?php
 	        foreach ($items as $item) {
-	            
-	            echo $item["itemName"]; 
-	            echo $item["itemAdd"];
-		        }
+
+	        	echo "<div class='item_box'> ";
+
+	        		echo "<h3 class='item_name'> ";
+	        			echo $item["itemName"];
+	        		echo "</h3>";
+
+	        		echo "<p> Date added: ";
+	        			echo $item["itemAdd"];
+	        		echo "</p>";
+
+	        	echo "</div>";
+	         }
 	            
         ?>
 
