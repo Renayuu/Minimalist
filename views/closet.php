@@ -8,13 +8,7 @@
 
 <h1>Your Closet</h1>
 
-	<div>
-		<!-- <form>
-			Item name:
-			<input type="text" name = "item_name">
-			
-		</form> -->
-        
+	<div>      
         <form action="insert.php" method="post">
         <p>
         <label for="itemName">Item Name:</label>
@@ -25,8 +19,15 @@
         <input type="text" name="itemtype" id="itemType">
         </p>
         <p>
-        <label for="itemColour">Colour:</label>
-        <input type="text" name="colour" id="itemColour">
+        <label for="itemPrice">Item Price:</label>
+        <input type="text" name="itemprice" id="itemPrice">
+        </p>
+        <p>
+        <label for="itemColour">Item Colour:</label>
+        <input type="text" name="itemcolour" id="itemColour">
+        </p>
+        <label for="wearCount">Wear Count:</label>
+        <input type="text" name="wearcount" id="wearCount">
         </p>
         <input type="submit" value="Add Records">
         </form>
@@ -34,13 +35,7 @@
 
 	<div>
 		<div class="item">
-			<!-- <h3>Item Name</h3>
-			<p>Type: </p>
-			<p>Worn .. times</p>
-			<p>Cost per wear: $</p>
-			<p>Price: $</p>
-			<p>Colour: </p>
-			<p></p> -->
+
 
 		<?php
 	        foreach ($items as $item) {
@@ -53,6 +48,22 @@
 
 	        		echo "<p> Date added: ";
 	        			echo $item["itemAdd"];
+	        		echo "</p>";
+                    
+                    echo "<p> Item Type: ";
+	        			echo $item["itemType"];
+	        		echo "</p>";
+                
+                    echo "<p> Item Price: ";
+	        			echo $item["itemPrice"];
+	        		echo "</p>";
+                
+                    echo "<p> Item Colour: ";
+	        			echo $item["itemColour"];
+	        		echo "</p>";
+                
+                    echo "<p> Wear Count: ";
+	        			echo $item["wearCount"];
 	        		echo "</p>";
 
 	        	echo "</div>";

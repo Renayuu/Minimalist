@@ -17,7 +17,7 @@ function getData() {
 	$query = MySQL::getInstance()->query("SELECT * FROM Minimalist ORDER BY itemAdd DESC");
     return $query->fetchALL();
 
-     $sql = "INSERT INTO `Rena`.`Minimalist` (`itemID`, `itemAdd`, `itemName`, `itemType`, `itemPrice`, `itemColour`, `wearCount`) VALUES ('', '2015-12-12 06:24:00', 'Cord Mini Skirt', 'Skirt', '$20', 'Tan', '1');";
+     // $sql = "INSERT INTO `Rena`.`Minimalist` (`itemID`, `itemAdd`, `itemName`, `itemType`, `itemPrice`, `itemColour`, `wearCount`) VALUES ('', '2015-12-12 06:24:00', 'Cord Mini Skirt', 'Skirt', '$20', 'Tan', '1');";
 }
 
 // function publishData($item) {
@@ -28,27 +28,27 @@ function getData() {
 // }
 
 
-$servername = "localhost";
-$username = "s4325075";
-$password = "Amj4blys9Efl";
-$dbname = "Rena";
+// $servername = "localhost";
+// $username = "s4325075";
+// $password = "Amj4blys9Efl";
+// $dbname = "Rena";
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+// try {
+//     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+//     // set the PDO error mode to exception
+//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
     
    
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    echo "New record created successfully";
-    }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
+//     // use exec() because no results are returned
+//     $conn->exec($sql);
+//     echo "New record created successfully";
+//     }
+// catch(PDOException $e)
+//     {
+//     echo $sql . "<br>" . $e->getMessage();
+//     }
 
-$conn = null;
+// $conn = null;
 
 
 
