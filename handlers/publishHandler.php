@@ -1,11 +1,11 @@
 <?php
 
-class PublishHandler {
-    function get($message){
-        publishData($message);
+// class PublishHandler {
+//     function get($item){
+//         publishData($item);
         
-        echo "Published: '" . $message . "'";
-    }
-}
+//         echo "Published: '" . $item . "'";
+//     }
+// }
 
 ?>
