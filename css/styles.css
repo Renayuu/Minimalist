@@ -1,4 +1,67 @@
+body {
+	font-family: Helvetica, sans-serif;
+}
+
 h1 {
 	font-family: Helvetica, sans-serif;
-	color: red;
+	color: black;
 }
+
+p{
+	color: #888;
+}
+a {
+	text-decoration: none;
+}
+
+header {
+	margin-top: 20px;
+}
+
+
+/*  FORM  */
+
+.form-container {
+	background-color: #eee;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+/* FORM DATEPICKER */
+
+.ui-datepicker {
+	background-color: white;
+	margin: 5px auto 0;
+	padding: 10px;
+}
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+
+
+
+/* CLOSET ITEMS */
+.item-box {
+	border: solid 2px #fff;
+}
+
+.tops {
+	background-color: #FAF1E1;
+}
+.bottoms {
+	background-color: #D9F9F5;
+}
+.outerwear {
+	background-color: #E3F0F9 ;
+}
+.shoes {
+	background-color: #ECECEC;
+}
+.dresses {
+	background-color: #EAE5F3;
+}
+.accessories {
+	background-color: #FADDDD;
+}
+
