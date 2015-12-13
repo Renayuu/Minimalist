@@ -81,10 +81,15 @@
 	</div>
 
 	<div>
+	<?php 
+		echo "<h2>Total number of items: ";
+		echo count($items);
+		echo "</h2>";
+	?>
+
 		<div class="items-container">
-
-
 		<?php
+
 	        foreach ($items as $item) {
 	        	if ($item["itemType"] == "tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 tops'> ";
@@ -138,9 +143,10 @@
 	        			}
 	        		echo "</p>";
 
-
 	        	echo "</div>";
 	         }
+
+
 	            
         ?>
 
