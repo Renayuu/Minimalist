@@ -5,9 +5,9 @@ http://deepakagupta.blogspot.com.au/2014/07/step-by-step-to-upload-image-and-sto
 <?php
 /**********MYSQL Settings****************/
 $host="localhost";
-$databasename="Minimalist";
-$user="root";
-$pass="Amj4blys9Efl";
+$databasename="Minimize";
+$user="Bear";
+$pass="123456";
 /**********MYSQL Settings****************/
 
 
