@@ -7,7 +7,7 @@ http://stackoverflow.com/questions/27768354/error-because-of-sql-syntax
 http://stackoverflow.com/questions/28913931/upload-an-image-and-store-in-database-and-retrieve-using-php-code
 -->
 <?php
-include ("mysqlconnect.php");
+include ("lib/mysqlconnect.php");
 
 function GetImageExtension($imagetype)
 {

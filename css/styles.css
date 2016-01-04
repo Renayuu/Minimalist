@@ -44,24 +44,40 @@ header {
 /* CLOSET ITEMS */
 .item-box {
 	border: solid 2px #fff;
+    padding: 0;
 }
 
 .tops {
 	background-color: #FAF1E1;
+    text-align: center;
 }
 .bottoms {
 	background-color: #D9F9F5;
+    text-align: center;
 }
 .outerwear {
 	background-color: #E3F0F9 ;
+    text-align: center;
 }
-.shoes {
+.short_sleeves_top {
 	background-color: #ECECEC;
+    text-align: center;
 }
 .dresses {
 	background-color: #EAE5F3;
+    text-align: center;
 }
-.accessories {
+.long_sleeves_top {
 	background-color: #FADDDD;
+    text-align: center;
 }
 
+.item-box img {
+    width: 100%;
+    height: 250px;
+    border: solid 2px #eee;
+  
+
+    -o-object-fit: cover;
+    object-fit: cover;
+}

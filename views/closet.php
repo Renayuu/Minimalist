@@ -28,57 +28,66 @@
 	<h1>Your Closet</h1>
 
 
-	<div class="form-container">      
+	<div class="form-container"> 
 		<h2>Add new item</h2>
-        <form action="insert.php" method="post" name="addnewitem">
+        <form action="insert.php" method="post" name="addnewitem" enctype="multipart/form-data">
+        
         <div class="col-xs-12 col-sm-6 col-md-4">
-        	<p>
-	        <label for="itemName">Item Name:</label>
-	        <input type="text" name="itemname" id="itemName">
-	        </p>
 
 	        <p>
-	        <label for="itemType">Item Type:</label>
+	        <label for="Type">Item Type:</label>
 	        <!-- <input type="text" name="itemtype"> -->
-		        <select name="itemtype" id="itemType" >
-				  <option name="tops" value="tops">Tops</option>
-				  <option name="bottoms" value="bottoms">Bottoms</option>
-				  <option name="outerwear" value="outerwear">Outerwear</option>
-				  <option name="dresses" value="dresses">Dresses</option>
-				  <option name="shoes" value="shoes">Shoes</option>
-				  <option name="accessories" value="accessories">Accessories</option>
+		        <select name="Type" id="Type" >
+				  <option name="tops" value="Top">Tops</option>
+				  <option name="bottoms" value="Bottoms">Bottoms</option>
+				  <option name="outerwear" value="Outer Wear">Outer Wear</option> 
+				  <option name="dresses" value="Dresses">Dresses</option>
+				  <option name="short sleeves top" value="Short Sleeves Top">Short Sleeves Top</option>
+				  <option name="long sleeves top" value="Long Sleeves Top">Long Sleeves Top</option>
 				</select>
 	        </p>
+            
+            <p>
+		        <label for="Material">Item Material:</label>
+		        <input type="text" name="Material" id="Material">
+	        </p>
+            
         </div>
         
         <div class="col-xs-12 col-sm-6 col-md-4">
 	        <p>
-		        <label for="itemPrice">Item Price:</label>
-		        <input type="text" name="itemprice" id="itemPrice">
+		        <label for="Price">Item Price:</label>
+		        <input type="text" name="Price" id="Price">
+	        </p>
+            
+            <p>
+		        <label for="Description">Item Description:</label>
+                <textarea name="Description" id="Description"></textarea>
 	        </p>
 
-	        <p>
-		        <label for="itemColour">Item Colour:</label>
-		        <input type="text" name="itemcolour" id="itemColour">
-	        </p>
         </div>
+        
         <div class="col-xs-12 col-sm-6 col-md-4">
-	        <p>
-		        <label for="wearCount">Number of times worn:</label>
-		        <input type="text" name="wearcount" id="wearCount">
-	        </p>
 
-	        <p>
-	        	<label for="datepicker">Date bought:</label>
-		        <input type="text" name ="itemadd" id="datepicker">
-	        </p>
-	    </div>
+            <p>
+                <label for="Colour">Item Colour:</label>
+                <input type="text" name="Colour" id="Colour">
+            </p>
+            
+            <p>
+                <label for="uploadimage">Upload Image:</label>
+                <input name="uploadimage" type="file">
+            
+            </p>
+            
+        </div>
+            
+        </div>
 
 	    <div class="clearfix"></div>
         	<input type="submit" value="Add New Item">
 
         </form>
-	</div>
 
 	<div>
 	<?php 
@@ -91,59 +100,49 @@
 		<?php
 
 	        foreach ($items as $item) {
-	        	if ($item["itemType"] == "tops") {
+	        	if ($item["Type"] == "Top") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 tops'> ";
 	        		}
-	        	if ($item["itemType"] == "bottoms") {
+	        	if ($item["Type"] == "Bottoms") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 bottoms'> ";
 	        		}
-	        	if ($item["itemType"] == "outerwear") {
+	        	if ($item["Type"] == "Outer Wear") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 outerwear'> ";
 	        		}
-	        	if ($item["itemType"] == "dresses") {
+	        	if ($item["Type"] == "Dresses") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 dresses'> ";
 	        		}
-	        	if ($item["itemType"] == "shoes") {
-	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 shoes'> ";
+	        	if ($item["Type"] == "Short Sleeves Top") {
+	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 short_sleeves_top'> ";
 	        		}
-	        	if ($item["itemType"] == "accessories") {
-	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 accessories'> ";
+	        	if ($item["Type"] == "Long Sleeves Top") {
+	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 long_sleeves_top'> ";
 	        		}
+                
+                    echo "<p>";
+	        			echo "<img src="; echo $item["Image_Path"]; echo ">";
+	        		echo "</p>";
 
-	        		echo "<h3 class='item-name'> ";
-	        			echo $item["itemName"];
-	        		echo "</h3>";
 
 	        		echo "<p>Item Type: ";
-	        			echo $item["itemType"];
+	        			echo $item["Type"];
 	        		echo "</p>";
                 
                     echo "<p>Item Price: ";
-                    	echo "$ ".number_format($item["itemPrice"], 2);
+                    	echo "$ ".number_format($item["Price"], 2);
 	        		echo "</p>";
 
 	        		echo "<p>Date added: ";
-	        			echo $item["itemAdd"];
+	        			echo $item["Submission_Date"];
 	        		echo "</p>";
                 
                     echo "<p>Item Colour: ";
-	        			echo $item["itemColour"];
+	        			echo $item["Colour"];
 	        		echo "</p>";
                 
-                    echo "<p>Times worn: ";
-	        			echo $item["wearCount"];
-	        		echo "</p>";
+                echo "</div>";
 
-	        		echo "<p>Cost per wear: ";
-	        			if ($item["itemPrice"]) {
-	        				echo "$ ".number_format($item["itemPrice"] / $item["wearCount"], 2);
-	        			}
-	        			else {
-	        				echo "Cost unknown";
-	        			}
-	        		echo "</p>";
 
-	        	echo "</div>";
 	         }
 
 
