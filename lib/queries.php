@@ -14,7 +14,7 @@
 
 
 function getData() {
-	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY submission_date DESC");
+	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY Days_Last_Worn DESC");
     return $query->fetchALL();
 
      // $sql = "INSERT INTO `Rena`.`Minimalist` (`itemID`, `itemAdd`, `itemName`, `itemType`, `itemPrice`, `itemColour`, `wearCount`) VALUES ('', '2015-12-12 06:24:00', 'Cord Mini Skirt', 'Skirt', '$20', 'Tan', '1');";

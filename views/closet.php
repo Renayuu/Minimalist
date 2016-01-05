@@ -38,12 +38,13 @@
 	        <label for="Type">Item Type:</label>
 	        <!-- <input type="text" name="itemtype"> -->
 		        <select name="Type" id="Type" >
-				  <option name="tops" value="Top">Tops</option>
-				  <option name="bottoms" value="Bottoms">Bottoms</option>
-				  <option name="outerwear" value="Outer Wear">Outer Wear</option> 
-				  <option name="dresses" value="Dresses">Dresses</option>
-				  <option name="short sleeves top" value="Short Sleeves Top">Short Sleeves Top</option>
-				  <option name="long sleeves top" value="Long Sleeves Top">Long Sleeves Top</option>
+				  <option name="Tank Tops" value="Tank Tops">Tank Tops</option>
+                  <option name="Short Sleeve Tops" value="Short Sleeve Tops">Short Sleeve Tops</option>
+				  <option name="Long Sleeve Tops" value="Long Sleeve Tops">Long Sleeve Tops</option>
+                  <option name="Dresses" value="Dresses">Dresses</option>
+                  <option name="Skirts" value="Skirts">Skirts</option>
+				  <option name="Shorts" value="Shorts">Shorts</option>
+				  <option name="Pants" value="Pants">Pants</option> 
 				</select>
 	        </p>
             
@@ -71,7 +72,21 @@
 
             <p>
                 <label for="Colour">Item Colour:</label>
-                <input type="text" name="Colour" id="Colour">
+                <!-- <input type="text" name="Colour" id="Colour">-->
+                <select name="Colour" id="Colour" >
+                    <option name="Multi" value="Multi">Multi</option>
+                    <option name="Black" value="Black">Black</option>
+                    <option name="Gray" value="Gray">Gray</option>
+                    <option name="White" value="White">White</option>
+                    <option name="Red" value="Red">Red</option>
+                    <option name="Orange" value="Orange">Orange</option>
+                    <option name="Yellow" value="Yellow">Yellow</option> 
+                    <option name="Green" value="Green">Green</option>
+                    <option name="Blue" value="Blue">Blue</option>
+                    <option name="Purple" value="Purple">Purple</option>
+                    <option name="Pink" value="Pink">Pink</option>
+                    <option name="Brown" value="Brown">Brown</option>
+				</select>
             </p>
             
             <p>
@@ -100,23 +115,26 @@
 		<?php
 
 	        foreach ($items as $item) {
-	        	if ($item["Type"] == "Top") {
+	        	if ($item["Type"] == "Tank Tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 tops'> ";
 	        		}
-	        	if ($item["Type"] == "Bottoms") {
+	        	if ($item["Type"] == "Short Sleeve Tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 bottoms'> ";
 	        		}
-	        	if ($item["Type"] == "Outer Wear") {
+	        	if ($item["Type"] == "Long Sleeve Tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 outerwear'> ";
 	        		}
 	        	if ($item["Type"] == "Dresses") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 dresses'> ";
 	        		}
-	        	if ($item["Type"] == "Short Sleeves Top") {
+	        	if ($item["Type"] == "Skirts") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 short_sleeves_top'> ";
 	        		}
-	        	if ($item["Type"] == "Long Sleeves Top") {
+	        	if ($item["Type"] == "Shorts") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 long_sleeves_top'> ";
+                    }
+                if ($item["Type"] == "Pants") {
+	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 dresses'> ";
 	        		}
                 
                     echo "<p>";
@@ -131,13 +149,22 @@
                     echo "<p>Item Price: ";
                     	echo "$ ".number_format($item["Price"], 2);
 	        		echo "</p>";
-
-	        		echo "<p>Date added: ";
-	        			echo $item["Submission_Date"];
+                
+                    echo "<p>Cost Per Wear: ";
+                    	echo "$ ".number_format($item["Price"] / $item["Times_Worn"], 2);
 	        		echo "</p>";
+                
                 
                     echo "<p>Item Colour: ";
 	        			echo $item["Colour"];
+	        		echo "</p>";
+                
+                    echo "<p>Number of Times Worn: ";
+	                   echo $item["Times_Worn"];
+	        		echo "</p>";
+                
+                    echo "<p>Number of Days Ago Last Worn: ";
+	                   echo $item["Days_Last_Worn"];
 	        		echo "</p>";
                 
                 echo "</div>";

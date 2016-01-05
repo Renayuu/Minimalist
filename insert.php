@@ -15,7 +15,7 @@ $price = mysqli_real_escape_string($conn, $_POST['Price']);
 $colour = mysqli_real_escape_string($conn, $_POST['Colour']);
 $material = mysqli_real_escape_string($conn, $_POST['Material']);
 $description = mysqli_real_escape_string($conn, $_POST['Description']);
-$date = date("Y-m-d");
+//$date = date("Y-m-d");
 
 function GetImageExtension($imagetype)
 {
@@ -54,7 +54,7 @@ move_uploaded_file($temp_name, $target_path);
 }
 
 // attempt insert query execution
-$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`,`Description`,`Submission_Date`, `Image_Path`) VALUES ('$type', '$price', '$colour','$material','$description','$date','$target_path')";
+$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`,`Description`, `Image_Path`) VALUES ('$type', '$price', '$colour','$material','$description','$target_path')";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
