@@ -239,11 +239,11 @@
 	        		echo "</p>";
                 
                     echo "<p> <span class='item_label'>Last Worn: </span>";
-                    	if($item["Days_Last_Worn"] == 1) {
-                    		echo $item["Days_Last_Worn"]." day ago";
+                    	if($item["Date_Last_Worn"] == 1) {
+                    		echo $item["Date_Last_Worn"]." day ago";
                     	}
                     	else {
-                    		echo $item["Days_Last_Worn"]." days ago";
+                    		echo $item["Date_Last_Worn"]." days ago";
                     	}
 	                   
 	        		echo "</p>";
