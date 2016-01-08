@@ -1,5 +1,5 @@
 {
-	"event": "rfid_scan",
+	"event": "new_rfid_scan",
 	"url": "http://s4325075-minimalist.uqcloud.net/rfid_testing_page.php",
 	"requestType": "POST",
 	"form":
