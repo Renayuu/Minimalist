@@ -1,0 +1,11 @@
+{
+	"event": "rfid_scan",
+	"url": "http://s4325075-minimalist.uqcloud.net/rfid_testing_page.php",
+	"requestType": "POST",
+	"form":
+		{
+			"rfidscan": "{{rfid}}"
+		},
+	"mydevices": false
+
+}

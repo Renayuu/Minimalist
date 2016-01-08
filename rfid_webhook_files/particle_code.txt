@@ -1,0 +1,85 @@
+//http://bildr.org/2011/02/rfid-arduino/
+
+bool reading = false;
+String tagString;
+
+// variables to make this non-blocking
+unsigned long previousMillis = 0;
+const long publishinterval = 60000;
+
+// publishing to cloud
+String eventType;
+
+String payload;
+String thisitempayload;
+
+void setup() {
+    
+Serial.begin(9600);
+Serial1.begin(9600);
+
+}
+
+
+void loop() {
+    
+    // char tagString[13];
+    int index = 0;
+    
+    while(Serial1.available()) {
+        // Serial.println(Serial1.read());
+        
+        int readByte = Serial1.read(); //read next available byte
+
+        if(readByte == 2) reading = true; //begining of tag
+        
+        if(readByte == 3) {
+            // reading = false; //end of tag
+            publishRfid();
+        }
+    
+        if(reading && readByte != 2 && readByte != 10 && readByte != 13) {
+            //store the tag
+            tagString += readByte;
+            index ++;
+        }
+        
+    }
+    
+    //unsigned long currentMillis = millis();
+    
+    // if(currentMillis - previousMillis >= publishinterval){
+    //     eventType = "update";
+    //     publishRfid();
+    //     previousMillis - currentMillis;
+    // }
+    
+}
+
+
+void publishRfid() {
+    Serial.println(tagString);
+    
+    bool success;
+    
+    thisitempayload =  "{\"rfidscan\":\"";
+    thisitempayload += tagString;
+    thisitempayload += "\"}";
+    
+    Serial.println(thisitempayload);
+    
+    success = Particle.publish("rfid_scan", thisitempayload, 60, PRIVATE);
+        
+    // if (!success) {
+    //     Serial.println("rfid_scan publish error");
+    // }
+    // else {
+    //     Serial.println("rfid_scan publish success");
+    // }
+    
+    delay(3000);
+    
+    tagString = "";
+    reading = false;
+}
+
