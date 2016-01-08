@@ -186,10 +186,39 @@
 		echo "</h2>";
 	?>
 
+	<!-- get days ago in the right format -->
+
+	
+	
+
+
+
 		<div class="items-container">
 		<?php
+		foreach ($items as $item){
+			$date1 = new DateTime();
+			$date2 = new DateTime(date('Y-m-d', strtotime($item["Date_Last_Worn"])));
+			//echo $date1->diff($date2)->days;
+			//echo $date1;
+			//echo $date2;
+			$daysago = $date1->diff($date2)->days;
+			//$dt = date();
+			    //echo $dt."<br>";
+			     //echo strtotime($item["Date_Last_Worn"]);
+			   // $worn_date = strtotime($item["Date_Last_Worn"]);
+				//echo $worn_date;
 
-	        foreach ($items as $item) {
+
+			    //$difference = $dt - $worn_date;
+			     //echo $difference;
+
+			    // getting the difference in minutes
+			    //$difference_in_hours = round($difference / (60*60));
+			    //$difference_in_days = round($difference_in_hours / 24);
+
+			    //echo $difference->days."<br>";
+
+			   
 	        	if ($item["Type"] == "Tank Tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 tank_tops'> ";
 	        		}
@@ -239,18 +268,22 @@
 	        		echo "</p>";
                 
                     echo "<p> <span class='item_label'>Last Worn: </span>";
-                    	if($item["Date_Last_Worn"] == 1) {
-                    		echo $item["Date_Last_Worn"]." day ago";
+
+                    	if ($daysago == 1) {
+                    		echo $daysago." day ago";
+                    	}
+                    	else if ($daysago == 0){
+                    		echo "Today";
                     	}
                     	else {
-                    		echo $item["Date_Last_Worn"]." days ago";
+                    		echo $daysago." days ago";
                     	}
 	                   
 	        		echo "</p>";
                 
                 echo "</div>";
 
-	         }
+	       }
 	            
         ?>
 
