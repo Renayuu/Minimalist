@@ -4,6 +4,7 @@
 	"requestType": "POST",
 	"form":
 		{
+			"thisdevice": "{{SPARK_CORE_ID}}",
 			"rfidscan": "{{rfid}}"
 		},
 	"mydevices": false
