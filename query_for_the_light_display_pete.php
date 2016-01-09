@@ -7,14 +7,14 @@ $light_colours = "";
 $sql = "SELECT Item_ID, Date_Last_Worn FROM Item";
 $stmt = $db->prepare($sql);
 $stmt->execute();
-$result = $stmt->fetchAll();
+$result = $stmt->fetchAll(); //push the result in array
 
 $date1 = new DateTime();
 
-foreach ($result as $row)
+foreach ($result as $row) //loop every single element in results
 {
-	$date2 = new DateTime(date('Y-m-d', strtotime($row['Date_Last_Worn'])));
-	$daysago = $date1->diff($date2)->days;
+	$date2 = new DateTime(date('Y-m-d', strtotime($row['Date_Last_Worn']))); //take the heading and read the value from the collumn
+	$daysago = $date1->diff($date2)->days; //calculate the days difference
 	
 	if ($daysago == 0)
 	{
