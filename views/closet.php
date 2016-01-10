@@ -17,20 +17,19 @@
 	<!-- Custom Styles -->
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
+
+
 <body>
+
+<?php include ("views/navbar.php"); ?>
 
 <div class="container-fluid">
 
-	<header>
-		<img src="../images/minimize-logo.png" alt="minimize logo" id="logo" />
-	</header>
-
 	<h1>Your Closet</h1>
-
 
 	<!-- ADD New Item Modal -->
 
-	<!-- Button trigger modal -->
+	<!-- Button trigger for modal -->
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newItemModal">
 		  Add a new item
 		</button>
@@ -102,122 +101,48 @@
 		    </div> <!-- end modalContent -->
 		  </div> <!-- end modalDialog -->
 		</div> <!-- end my modal -->
-
-
-
-	<!-- <div class="form-container"> 
-		<h2>Add new item</h2>
-        <form action="insert.php" method="post" name="addnewitem" enctype="multipart/form-data">
-        
-	        <div class="col-xs-12 col-sm-6 col-md-4">
-
-		        <p>
-		        <label for="Type">Item Type:</label>
-			        <select name="Type" id="Type" >
-					  <option name="Tank Tops" value="Tank Tops">Tank Tops</option>
-	                  <option name="Short Sleeve Tops" value="Short Sleeve Tops">Short Sleeve Tops</option>
-					  <option name="Long Sleeve Tops" value="Long Sleeve Tops">Long Sleeve Tops</option>
-	                  <option name="Dresses" value="Dresses">Dresses</option>
-	                  <option name="Skirts" value="Skirts">Skirts</option>
-					  <option name="Shorts" value="Shorts">Shorts</option>
-					  <option name="Pants" value="Pants">Pants</option> 
-					</select>
-		        </p>
-	            
-	            <p>
-			        <label for="Material">Item Material:</label>
-			        <input type="text" name="Material" id="Material">
-		        </p>
-	            
-	        </div>
-        
-	        <div class="col-xs-12 col-sm-6 col-md-4">
-		        <p>
-			        <label for="Price">Item Price:</label>
-			        <input type="text" name="Price" id="Price">
-		        </p>
-	            
-	            <p>
-			        <label for="Description">Item Description:</label>
-	                <textarea name="Description" id="Description"></textarea>
-		        </p>
-
-	        </div>
-        
-	        <div class="col-xs-12 col-sm-6 col-md-4">
-
-	            <p>
-	                <label for="Colour">Item Colour:</label>
-	                <select name="Colour" id="Colour" >
-	                    <option name="Multi" value="Multi">Multi</option>
-	                    <option name="Black" value="Black">Black</option>
-	                    <option name="Gray" value="Gray">Gray</option>
-	                    <option name="White" value="White">White</option>
-	                    <option name="Red" value="Red">Red</option>
-	                    <option name="Orange" value="Orange">Orange</option>
-	                    <option name="Yellow" value="Yellow">Yellow</option> 
-	                    <option name="Green" value="Green">Green</option>
-	                    <option name="Blue" value="Blue">Blue</option>
-	                    <option name="Purple" value="Purple">Purple</option>
-	                    <option name="Pink" value="Pink">Pink</option>
-	                    <option name="Brown" value="Brown">Brown</option>
-					</select>
-	            </p>
-	            
-	            <p>
-	                <label for="uploadimage">Upload Image:</label>
-	                <input name="uploadimage" type="file">
-	            </p>
-	            
-	        </div>
-
-	        <input type="submit" value="Add New Item">
-        </form>
-
-    </div> -->
-
         
 
 	<div>
+		<h2>
+			Total number of items: 
+			<?php echo count($items); ?>
+		</h2>
 
-	<?php 
-		echo "<h2>Total number of items: ";
-		echo count($items);
-		echo "</h2>";
-	?>
+	<div id="filter">
+		<h2>Filter by</h2>
+		<div>
+			<input type="checkbox" id="tank_tops" name="tankTops">
+			<label for="tank_tops">Tank Tops</label>
+
+			<input type="checkbox" id="ss_tops" name="shortSleeveTops">
+			<label for="ss_tops">Short Sleeve Tops</label>
+
+			<input type="checkbox" id="ls_tops" name="longSleeveTops">
+			<label for="ls_tops">Long Sleeve Tops</label>
+
+			<input type="checkbox" id="dresses" name="dresses">
+			<label for="dresses">Dresses</label>
+
+			<input type="checkbox" id="skirts" name="skirts">
+			<label for="skirts">Skirts</label>
+
+			<input type="checkbox" id="shorts" name="shorts">
+			<label for="shorts">Shorts</label>
+
+			<input type="checkbox" id="pants" name="pants">
+			<label for="pants">Pants</label>
+		</div>
+	</div>
 
 	<!-- get days ago in the right format -->
 
-	
-	
-
-
-
-		<div class="items-container">
+		<div class="items-container" id="closet">
 		<?php
 		foreach ($items as $item){
 			$date1 = new DateTime();
 			$date2 = new DateTime(date('Y-m-d', strtotime($item["Date_Last_Worn"])));
-			//echo $date1->diff($date2)->days;
-			//echo $date1;
-			//echo $date2;
 			$daysago = $date1->diff($date2)->days;
-			//$dt = date();
-			    //echo $dt."<br>";
-			     //echo strtotime($item["Date_Last_Worn"]);
-			   // $worn_date = strtotime($item["Date_Last_Worn"]);
-				//echo $worn_date;
-
-
-			    //$difference = $dt - $worn_date;
-			     //echo $difference;
-
-			    // getting the difference in minutes
-			    //$difference_in_hours = round($difference / (60*60));
-			    //$difference_in_days = round($difference_in_hours / 24);
-
-			    //echo $difference->days."<br>";
-
 			   
 	        	if ($item["Type"] == "Tank Tops") {
 	        		echo "<div class='item-box col-xs-6 col-sm-4 col-md-3 tank_tops'> ";
@@ -286,27 +211,6 @@
 	       }
 	            
         ?>
-
-        <!-- Test items for testing styling on local computer -->
-	        <!-- <div class='item-box col-xs-6 col-sm-4 col-md-3 tank_tops'>
-	        	<p><img src=""></p>
-	        	<p>Item Type: Tanks Tops</p>
-				<p>Item Price: $50</p>
-				<p>Cost Per Wear: $4.90</p>
-                <p>Item Colour: Blue</p>
-				<p>Number of Times Worn: 45 </p>
-                <p>Number of Days Ago Last Worn: 3</p>
-	        </div>
-	        <div class='item-box col-xs-6 col-sm-4 col-md-3 shorts'>
-	        	<p><img src=""></p>
-	        	<p>Item Type: Shorts</p>
-				<p>Item Price: $50</p>
-				<p>Cost Per Wear: $4.90</p>
-                <p>Item Colour: Blue</p>
-				<p>Number of Times Worn: 45 </p>
-                <p>Number of Days Ago Last Worn: 3</p>
-	        </div> -->
-
 
 		</div> <!-- end items container -->
 

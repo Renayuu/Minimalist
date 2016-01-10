@@ -1,3 +1,12 @@
+.container-fluid {
+	margin-top: 50px;
+}
+
+.container {
+	max-width: 900px;
+	margin: auto;
+}
+
 body {
 	font-family: Helvetica, sans-serif;
 }
@@ -17,7 +26,12 @@ a {
 }
 
 header {
-	margin-top: 20px;
+	margin-top: 70px;
+}
+
+#logo {
+	height: 70px;
+	padding: 10px;
 }
 
 .item_label {

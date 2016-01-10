@@ -1,0 +1,16 @@
+{
+	"event": "rfid_minimalist_pete",
+	
+	"url": "http://s4325075-minimalist.uqcloud.net/rfid_testing_page.php",
+	
+	"requestType": "POST",
+	
+	"form": 
+	{
+		
+		"thisdevice": "{{SPARK_CORE_ID}}",
+		"rfidscan": "{{rfid_scanned}}"
+	},
+	
+	"mydevices": true
+}
