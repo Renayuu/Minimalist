@@ -1,11 +1,11 @@
 {
-	"event": "new_rfid_scan",
+	"event": "rfid_minimalist_alyssa2",
 	"url": "http://s4325075-minimalist.uqcloud.net/rfid_testing_page.php",
 	"requestType": "POST",
 	"form":
 		{
 			"thisdevice": "{{SPARK_CORE_ID}}",
-			"rfidscan": "{{rfid}}"
+			"rfidscan": "{{rfid_scanned}}"
 		},
 	"mydevices": false
 
