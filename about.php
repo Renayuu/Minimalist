@@ -5,6 +5,8 @@ $image_url1='blob:https://drive.google.com/2523a9c8-5260-4b28-ad2a-6887c0469b6d'
 $image_url2=''
 ?>
 
+<title>Minimize: About</title>
+
 <div class="container"><font face="proxima nova soft">
 
 	<h1 align = "center"><font face="proxima nova soft">About Minimize</font></h1>
