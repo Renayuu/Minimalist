@@ -2,3 +2,7 @@
 views/insert.php
 
 views/closet copy.php
+
+rfid_webhook_files/rena_rfid_light.json
+
+rfid_webhook_files/rena_rfid_scan.json
