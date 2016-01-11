@@ -2,7 +2,7 @@
 
 function getData() 
 {
-	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY Date_Last_Worn ASC");
+	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY Date_Last_Worn DESC");
     return $query->fetchALL();
 }
 
