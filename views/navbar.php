@@ -31,7 +31,7 @@
 		<ul class="nav nav-pills pull-right">
 		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net" class="<?echo $nav_closet;?>"><font face="proxima nova soft">My Closet</font></a></li>
 		  <li role="presentation"><a href="about.php" class="<?echo $nav_about;?>"><font face="proxima nova soft">About</font></a></li>
-		  <li role="presentation"><a href="development.php" class="<?echo $nav_development;?>"><font face="proxima nova soft">Development</font></a></li>
+		  <li role="presentation"><a href="development.html" class="<?echo $nav_development;?>"><font face="proxima nova soft">Development</font></a></li>
 		  <li role="presentation"><a href="goals.php" class="<?echo $nav_goals;?>"><font face="proxima nova soft">Goals</font></a></li>
 		  <li role="presentation"><a href="marketplace.php" class="<?echo $nav_marketplace;?>"><font face="proxima nova soft">Marketplace</font></a></li>
 		</ul>
