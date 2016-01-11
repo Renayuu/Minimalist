@@ -7,12 +7,12 @@ $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 try
 {
 	$testresult = $db->query("SELECT * FROM Item");
-	echo "Connected to db";
+	//echo "Connected to db";
 }
 catch(PDOException $ex)
 {
-	echo "an error occured";
-	echo $ex->getMessage();
+	//echo "an error occured";
+	//echo $ex->getMessage();
 }
 
 ?>

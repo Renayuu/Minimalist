@@ -8,9 +8,9 @@ $stmt->execute();
 //
 $result = $stmt->fetchALL();
 
-//echo json_encode($result);
-print_r($result);
+echo json_encode($result);
+//print_r($result);
 
-$conn = NULL;
+//$conn = NULL;
 
 ?>
