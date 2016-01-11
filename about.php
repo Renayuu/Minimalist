@@ -1,15 +1,26 @@
 <?php include ("views/navbar.php"); ?>
 
-<div class="container">
+<?php
+$image_url1='blob:https://drive.google.com/2523a9c8-5260-4b28-ad2a-6887c0469b6d';
+$image_url2=''
+?>
 
-	<h1>About Minimize</h1>
+<div class="container"><font face="proxima nova soft">
 
-	<div>
+	<h1 align = "center"><font face="proxima nova soft">About Minimize</font></h1>
+
+	<div><font face="proxima nova soft">
 		<p>Minimize is an Internet of Things project that is primarily intended to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
+
+		<img src="IMG_0137-2.JPG" />
+
 
 		<p>Our goal with this project is to help users generate greater awareness about their clothing habits, to instigate behavioral and attitudinal change in regards to minimizing, and to encourage users to make more informed decisions regarding their consumption and ownership of clothing items.</p>
 
 		<p>This website is meant to be considered in conjunction with our physical mini-closet prototype (pictured above). As of now, our display allows users to visualize items they are neglecting by featuring light over each item in a color that corresponds with the number of days ago the item was last worn.</p>
+
+		<img src="<?php echo $image_url1;?>">
+
 
 		<p>Scanning an item to the RFID reader will increment the number of times the item was worn and reset the number of days ago it was last worn (setting the light color above the item to white, which signifies that it was worn within the past 10 days). Visualizing this data can aid users in easily recognizing the items they have neglected, which can prompt them to either use those items more or get rid of them so that they can be of use to someone else.</p>
 
@@ -23,7 +34,7 @@
 		<ul>
 			<li><a href="http://own-it.us/html/about.html">Mary Mattingly&#39;s OWN-IT.US</a>, <a href="https://www.youtube.com/watch?v=gujH5oYmHcY">Video</a></li>
 			<li><a href="https://www.artangel.org.uk/project/break-down/">Michael Landy&#39;s Break Down</a></li>
-			<li><a href="https://www.youtube.com/watch?v=z20CjCim8DM">Patagonias &quot;Worn Wear: a Film About the Stories We Wear&quot;</a></li>
+			<li><a href="https://www.youtube.com/watch?v=z20CjCim8DM">Patagonia&#39;s Worn Wear: a Film About the Stories We Wear</a></li>
 			<li><a href="http://significantobjects.com">Significant Objects</a></li>
 			<li><a href="https://objectethnography.wordpress.com/how-it-works/">The Object Ethnography Project</a></li>
 			<li><a href="http://talesofthings.com">Tales of Things</a></li>
@@ -31,7 +42,7 @@
 			<li><a href="http://shelflife.oxfam.org.uk">Oxfam ShelfLife</a>, <a href="http://chrisspeed.net/?p=773">Link 2</a>, <a href="https://www.youtube.com/watch?v=l897sK8rSe0">Video</a></li>
 		</ul>
 
-	</div>
+	</font></div>
 
 
-</div>
+</font></div>

@@ -1,9 +1,21 @@
 <?php
 
-function getData() {
+function getData() 
+{
 	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY Date_Last_Worn ASC");
     return $query->fetchALL();
 }
+
+// function filterItemType() 
+// {
+// 	if $('type').is(':tank_tops')
+// 	{
+// 		$query = MySQL::getInstance()->query("SELECT * FROM Item WHERE Type = "Tank Tops"");
+// 		return $query->fetchALL();
+// 	}
+// }
+
+
 
 // function filterItemType() {
 // 	if (in_array("tankTops", $opts)) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Minimize: Your Closet</title>
+	<title>Minimize: My Closet</title>
 
 	<!-- JQUERY -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -23,15 +23,22 @@
 
 <?php include ("views/navbar.php"); ?>
 
-<div class="container-fluid">
+<div class="container-fluid" align = "center"><font face="proxima nova soft">
 
-	<h1>Your Closet</h1>
+	<h1 style="font-size:80px" align = "center"><font face="proxima nova soft">M   I   N   I   M   I   Z   E</font></h1>
+
+	<h3 align = "center"><font face="proxima nova soft">Name's Closet</font></h3>
+	<div>
+		<h4 align = "center"><font face="proxima nova soft">
+			<?php echo count($items); ?>
+			ITEMS
+		</font></h4>
 
 	<!-- ADD New Item Modal -->
 
 	<!-- Button trigger for modal -->
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newItemModal">
-		  Add a new item
+		  add a new item
 		</button>
 
 	<!-- Modal -->
@@ -41,7 +48,7 @@
 
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title" id="myModalLabel">Add new item</h4>
+		        <h4 class="modal-title" id="myModalLabel">ADD A NEW ITEM</h4>
 		      </div>
 		      <form action="insert.php" method="post" name="addnewitem" enctype="multipart/form-data" id="newItemForm">
 		      <div class="modal-body">
@@ -101,38 +108,58 @@
 		    </div> <!-- end modalContent -->
 		  </div> <!-- end modalDialog -->
 		</div> <!-- end my modal -->
-        
 
-	<div>
-		<h2>
-			Total number of items: 
-			<?php echo count($items); ?>
-		</h2>
+
+<div id="filter">
+		<h4 align = "center"><font face="proxima nova soft">FILTER BY</font></h4>
+		<div align = "center"><font face="proxima nova soft">
+			<form action="">
+				<input type="radio" name="measurement" value="times_worn"> Times Worn
+				<input type="radio" name="measurement" value="last_worn"> Days Ago Last Worn
+				<input type="radio" name="measurement" value="price"> Price
+				<input type="radio" name="measurement" value="cost_per_wear"> Cost Per Wear
+			</form>
+		</font></div>
+	</div>
 
 	<div id="filter">
-		<h2>Filter by</h2>
-		<div>
-			<input type="checkbox" id="tank_tops" name="tankTops">
-			<label for="tank_tops">Tank Tops</label>
+		<h4 align = "center"><font face="proxima nova soft">ONLY SHOW</font></h4>
+		<div align = "center"><font face="proxima nova soft">
+			<input type="checkbox" name="type" value="tank_tops"> Tank Tops
+			<input type="checkbox" name="type" value="ss_tops"> Short Sleeve Tops
+			<input type="checkbox" name="type" value="ls_tops"> Long Sleeve Tops
+			<input type="checkbox" name="type" value="dresses"> Dresses
+			<input type="checkbox" name="type" value="skirts"> Skirts
+			<input type="checkbox" name="type" value="shorts"> Shorts
+			<input type="checkbox" name="type" value="pants"> Pants
+		</font></div>
+	</div>
 
-			<input type="checkbox" id="ss_tops" name="shortSleeveTops">
-			<label for="ss_tops">Short Sleeve Tops</label>
+	<div id="filter">
+		<div align = "center"><font face="proxima nova soft">
+			<input type="checkbox" name="color" value="multi"> Multi
+			<input type="checkbox" name="color" value="black"> Black
+			<input type="checkbox" name="color" value="gray"> Gray
+			<input type="checkbox" name="color" value="white"> White
+			<input type="checkbox" name="color" value="red"> Red
+			<input type="checkbox" name="color" value="orange"> Orange
+			<input type="checkbox" name="color" value="yellow"> Yellow
+			<input type="checkbox" name="color" value="green"> Green
+			<input type="checkbox" name="color" value="blue"> Blue
+			<input type="checkbox" name="color" value="purple"> Purple
+			<input type="checkbox" name="color" value="pink"> Pink
+			<input type="checkbox" name="color" value="brown"> Brown
+		</font></div>
+	</div>
 
-			<input type="checkbox" id="ls_tops" name="longSleeveTops">
-			<label for="ls_tops">Long Sleeve Tops</label>
-
-			<input type="checkbox" id="dresses" name="dresses">
-			<label for="dresses">Dresses</label>
-
-			<input type="checkbox" id="skirts" name="skirts">
-			<label for="skirts">Skirts</label>
-
-			<input type="checkbox" id="shorts" name="shorts">
-			<label for="shorts">Shorts</label>
-
-			<input type="checkbox" id="pants" name="pants">
-			<label for="pants">Pants</label>
-		</div>
+	<div id="filter">
+		<h4 align = "center"><font face="proxima nova soft">ORDER BY</font></h4>
+		<div align = "center"><font face="proxima nova soft">
+			<form action="">
+				<input type="radio" name="order" value="ascending"> Ascending
+				<input type="radio" name="order" value="descending"> Descending
+			</form>
+		</font></div>
 	</div>
 
 	<!-- get days ago in the right format -->
@@ -216,7 +243,7 @@
 
 	</div> <!-- end all items div -->
 
-</div> <!-- End Container div -->
+</font></div> <!-- End Container div -->
 </body>
 
 
