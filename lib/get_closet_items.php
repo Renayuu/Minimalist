@@ -1,9 +1,9 @@
 <?php
 
-require_once "mysqlconnect.php";
+require_once "utils.php";
 
 //$sql = "SELECT * FROM Item ORDER BY Date_Last_Worn ASC";
-$stmt = $conn->prepare("SELECT * FROM Item ORDER BY Date_Last_Worn ASC");
+$stmt = $db->prepare("SELECT * FROM Item ORDER BY Date_Last_Worn ASC");
 $stmt->execute();
 //
 $result = $stmt->fetchALL();
