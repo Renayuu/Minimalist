@@ -12,6 +12,10 @@
 	<!-- Custom Styles -->
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 
+	<!-- Import font -->
+	<script src="https://use.typekit.net/sgh8odq.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 
 <?php
 	// if ($PHP_SELF != '/closet.php')

@@ -7,11 +7,11 @@ $image_url2=''
 
 <title>Minimize: About</title>
 
-<div class="container"><font face="proxima nova soft">
+<div class="container">
 
-	<h1 align = "center"><font face="proxima nova soft">About Minimize</font></h1>
+	<h1 align = "center">About Minimize</h1>
 
-	<div class="container"><font face="proxima nova soft">
+	<div class="container">
 		<p>Minimize is an Internet of Things project that is primarily intended to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
 
 		<font align = "center">
