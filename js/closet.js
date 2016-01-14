@@ -2,22 +2,37 @@ jQuery(document).ready(function($){
 
 	console.log("hello from closet.js");
 	var item_data = [];
-
+    
+    $.ajax({
+        type: "GET",
+        url: "../lib/get_closet_items.php",
+        success: function(data) {
+            console.log(data);
+            item_data = JSON.parse(data);
+            //console.log("number in item_data "+item_data.length);
+            fantastic(item_data);
+        }, 
+        error: function (err){
+            console.log("error:"+err)
+        }
+    });
+    
 	$("#button_filter").click(function(){
 		console.log("hello alyssa");
-		$.ajax({
-			type: "GET",
-			url: "../lib/get_closet_items.php",
-			success: function(data) {
-				console.log(data);
-				item_data = JSON.parse(data);
-				//console.log("number in item_data "+item_data.length);
-				fantastic(item_data);
-			}, 
-			error: function (err){
-				console.log("error:"+err)
-			}
-		})
+//		$.ajax({
+//			type: "GET",
+//			url: "../lib/get_closet_items.php",
+//			success: function(data) {
+//				console.log(data);
+//				item_data = JSON.parse(data);
+//				//console.log("number in item_data "+item_data.length);
+//				fantastic(item_data);
+//			}, 
+//			error: function (err){
+//				console.log("error:"+err)
+//			}
+//		})
+        //add filter then call fantastic
 	});
 
 
@@ -33,10 +48,23 @@ jQuery(document).ready(function($){
 			console.log(item_data[i].Type); // just to test that it is working
 
 			//insert code here to calculate the days since last worn
-			foreach (item_data[i]){
-				date1 = new DateTime();
-				date2 = new DateTime(date('Y-m-d', strtotime(item_data[i].Date_Last_Worn)));
-				daysago = date1->diff(date2)->days;
+			
+            //for each (item_data[i] in item_data)
+       
+//				date1 = new DateTime();
+//				date2 = new DateTime(date('Y-m-d', strtotime(item_data[i].Date_Last_Worn)));
+//				daysago = date1->diff(date2)->days;
+            
+            var date1 = new Date();
+            var date2 = item_data[i].Date_Last_Worn;
+            date2 = new Date(date2);
+            //console.log(d);
+            //var date2 = Date.parse(d);
+            
+            
+            var daysago = Math.round((date1 - date2) / (1000 * 3600 * 24));
+            //console.log(daysago);
+            
 			
 			// construct the web page elements
 			var page_element = "";
@@ -68,9 +96,9 @@ jQuery(document).ready(function($){
 
 			page_element += "<p> <span class='item_label'>Type: </span>" + item_data[i].Type + "</p>";
 
-			page_element += "<p> <span class='item_label'>Price: </span>" + item_data[i].Price + "</p>";
+			page_element += "<p> <span class='item_label'>Price: </span>$" + item_data[i].Price + "</p>";
 
-			page_element += "<p> <span class='item_label'>Cost Per Wear: </span>" + item_data[i].Price / item_data[i].Times_Worn + "</p>";
+			page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</p>";
 
 			page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
 
@@ -84,7 +112,7 @@ jQuery(document).ready(function($){
 			else if (daysago == 0){
 				page_element += "Today";
 			}
-			else if {
+			else {
 				page_element += daysago + " days ago";
 			}
 
@@ -97,5 +125,7 @@ jQuery(document).ready(function($){
 			var html = $.parseHTML(page_element);
 			$('#closet').append(html);
 			
-		}
+		
 	};
+        
+    };
