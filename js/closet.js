@@ -33,7 +33,10 @@ jQuery(document).ready(function($){
 			console.log(item_data[i].Type); // just to test that it is working
 
 			//insert code here to calculate the days since last worn
-			
+			foreach (item_data[i]){
+				date1 = new DateTime();
+				date2 = new DateTime(date('Y-m-d', strtotime(item_data[i].Date_Last_Worn)));
+				daysago = date1->diff(date2)->days;
 			
 			// construct the web page elements
 			var page_element = "";
@@ -61,7 +64,30 @@ jQuery(document).ready(function($){
 			}
 			page_element += "'>";
 			
-			page_element = item_data[i].Image_Path
+			page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
+
+			page_element += "<p> <span class='item_label'>Type: </span>" + item_data[i].Type + "</p>";
+
+			page_element += "<p> <span class='item_label'>Price: </span>" + item_data[i].Price + "</p>";
+
+			page_element += "<p> <span class='item_label'>Cost Per Wear: </span>" + item_data[i].Price / item_data[i].Times_Worn + "</p>";
+
+			page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
+
+			page_element += "<p><span class='item_label'>Times Worn: </span>" + item_data[i].Times_Worn + "</p>";
+
+			page_element += "<p> <span class='item_label'>Last Worn: </span>";
+
+			if (daysago == 1){
+				page_element += daysago + "day ago";
+			}
+			else if (daysago == 0){
+				page_element += "Today";
+			}
+			else if {
+				page_element += daysago + " days ago";
+			}
+
 
 			
 
