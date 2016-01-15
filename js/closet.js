@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
 			console.log(item_data[i].Type); // just to test that it is working
 
 			//insert code here to calculate the days since last worn
-            
+            //method applied from http://stackoverflow.com/questions/2627650/why-javascript-gettime-is-not-a-function
             var date1 = new Date();
             var date2 = item_data[i].Date_Last_Worn;
             date2 = new Date(date2);
