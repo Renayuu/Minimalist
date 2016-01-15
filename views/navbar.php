@@ -26,18 +26,17 @@
 	// { $goals = 'none'; } else { $nav_ = 'active'; }
 ?>
 
-<header>
-	
-
+<header>	
 	<nav class="navbar navbar-default navbar-fixed-top">
-
+		<a class="navbar-brand" href="#"><img id="logo" alt="Minimize logo" src="images/minimize.png"></a>
 
 		<ul class="nav nav-pills pull-right">
-		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net" class="<?echo $nav_closet;?>"><font face="proxima nova soft">My Closet</font></a></li>
-		  <li role="presentation"><a href="about.php" class="<?echo $nav_about;?>"><font face="proxima nova soft">About</font></a></li>
-		  <li role="presentation"><a href="development.html" class="<?echo $nav_development;?>"><font face="proxima nova soft">Development</font></a></li>
-		  <li role="presentation"><a href="goals.php" class="<?echo $nav_goals;?>"><font face="proxima nova soft">Goals</font></a></li>
-		  <li role="presentation"><a href="marketplace.php" class="<?echo $nav_marketplace;?>"><font face="proxima nova soft">Marketplace</font></a></li>
+		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">My Closet</a></li>
+		  <li role="presentation"><a href="about.php">About</a></li>
+		  <li role="presentation"><a href="development.html">Development</a></li>
+          <li role="presentation"><a href="development2.html">Development 2</a></li>
+		  <li role="presentation"><a href="goals.php">Goals</a></li>
+		  <li role="presentation"><a href="marketplace.php">Marketplace</a></li>
 		</ul>
 
 	</nav>

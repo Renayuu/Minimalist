@@ -8,7 +8,6 @@
 }
 
 
-
 body {
 	font-family: Proxima nova soft, Helvetica, sans-serif;
 }
@@ -16,6 +15,12 @@ body {
 h1 {
 	font-family: Proxima nova soft, Helvetica, sans-serif;
 	color: black;
+	text-align: center;
+	font-size: 50px;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	color: #64688F;
+	margin-top: 30px;
 }
 
 p {
@@ -32,13 +37,13 @@ header {
 }
 
 #logo {
-	height: 70px;
+	width: 200px;
 	padding: 10px;
+	margin-top: 5px;
 }
 
 .item_label {
 	opacity: 0.5;
-	font-family: Helvetica, sans-serif;
 	font-weight: bold;
 	font-size: 13px;
 	color: #555;
@@ -48,7 +53,6 @@ header {
 
 
 /*  FORM  */
-
 .form-container {
 	background-color: #eee;
 	padding: 20px;
@@ -57,15 +61,14 @@ header {
 
 /* FORM DATEPICKER */
 
-.ui-datepicker {
+/*.ui-datepicker {
 	background-color: white;
 	margin: 5px auto 0;
 	padding: 10px;
 }
 .ui-datepicker a {
     text-decoration: none;
-}
-
+}*/
 
 
 
@@ -105,14 +108,10 @@ header {
 }
 
 
-
-
 .item-box img {
     width: 100%;
     height: 250px;
     border: none;
-  
-
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -122,5 +121,47 @@ img.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    boder:none
+    border:none
+}
+
+#info-box {
+	padding: 20px;
+	text-align: center;
+}
+
+#filter-box {
+	background-color: #EEE9E1;
+	padding: 20px;
+	text-align: center;
+}
+
+
+/*   NAVIGATION BAR*/
+.nav {
+	margin-top: 20px;
+}
+
+.navbar {
+	height: 75px;
+}
+
+.navbar-default {
+	background-color: #D9DBED;
+	border: none;
+}
+
+.nav a {
+	color: #64688F;
+}
+
+.nav li:last-child {
+	margin-right: 20px;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
