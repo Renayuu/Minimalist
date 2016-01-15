@@ -10,6 +10,7 @@ jQuery(document).ready(function($){
             console.log(data);
             item_data = JSON.parse(data);
             //console.log("number in item_data "+item_data.length);
+            $("#no_items").text(item_data.length);
             fantastic(item_data);
         }, 
         error: function (err){
@@ -48,24 +49,13 @@ jQuery(document).ready(function($){
 			console.log(item_data[i].Type); // just to test that it is working
 
 			//insert code here to calculate the days since last worn
-			
-            //for each (item_data[i] in item_data)
-       
-//				date1 = new DateTime();
-//				date2 = new DateTime(date('Y-m-d', strtotime(item_data[i].Date_Last_Worn)));
-//				daysago = date1->diff(date2)->days;
             
             var date1 = new Date();
             var date2 = item_data[i].Date_Last_Worn;
             date2 = new Date(date2);
-            //console.log(d);
-            //var date2 = Date.parse(d);
-            
             
             var daysago = Math.round((date1 - date2) / (1000 * 3600 * 24));
-            //console.log(daysago);
             
-			
 			// construct the web page elements
 			var page_element = "";
 			page_element += "<div class='item-box col-xs-6 col-sm-4 col-md-3 ";
