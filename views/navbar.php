@@ -33,6 +33,7 @@
 		<ul class="nav nav-pills pull-right">
 		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">My Closet</a></li>
 		  <li role="presentation"><a href="about.php">About</a></li>
+		  <li role="presentation"><a href="how_it_works.php">How It Works</a></li>
 		  <li role="presentation"><a href="development.html">Development</a></li>
           <li role="presentation"><a href="development2.html">Development 2</a></li>
 		  <li role="presentation"><a href="goals.php">Goals</a></li>

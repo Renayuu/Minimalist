@@ -14,19 +14,8 @@ $image_url2=''
 	<div class="container">
 		<p>Minimize is an Internet of Things project that is primarily intended to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
 
-		<font align = "center">
-		<img class="displayed" src="images/closet.jpg" align="middle">
-		</font>
 
 		<p>Our goal with this project is to help users generate greater awareness about their clothing habits, to instigate behavioral and attitudinal change in regards to minimizing, and to encourage users to make more informed decisions regarding their consumption and ownership of clothing items.</p>
-
-		<p>This website is meant to be considered in conjunction with our physical mini-closet prototype (pictured above). As of now, our display allows users to visualize items they are neglecting by featuring light over each item in a color that corresponds with the number of days ago the item was last worn.</p>
-
-		<font align = "center">
-		<img class="displayed" src="images/colors.jpg" align="middle">
-		</font>
-
-		<p>Scanning an item to the RFID reader will increment the number of times the item was worn and reset the number of days ago it was last worn (setting the light color above the item to white, which signifies that it was worn within the past 10 days). Visualizing this data can aid users in easily recognizing the items they have neglected, which can prompt them to either use those items more or get rid of them so that they can be of use to someone else.</p>
 
 		<p>Minimize is designed for a future in which information is already embedded (via RFID tags) within clothing items by manufacturers at the point of production--a future in which clothing items could automatically be cataloged to your account upon their purchase. </p>
 
