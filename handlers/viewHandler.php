@@ -2,10 +2,10 @@
 
 class ViewHandler{
     function get() {
-        //$items = getData();
-        // include "views/messages.php";
 
-        include "views/closet.php";
+
+        // include "views/closet.php";
+        include "development.html";
     }
 }
 
