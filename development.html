@@ -34,12 +34,12 @@
 		<ul class="nav nav-pills pull-right">
 		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">My Closet</a></li>
 		  <li role="presentation"><a href="about.php">About</a></li>
+		  <li role="presentation"><a href="how_it_works.php">How It Works</a></li>
 		  <li role="presentation"><a href="development.html">Development</a></li>
           <li role="presentation"><a href="development2.html">Development 2</a></li>
 		  <li role="presentation"><a href="goals.php">Goals</a></li>
-		  <li role="presentation"><a href="marketplace.php">Marketplace</a></li>
+		  <li role="presentation"><a href="discarded_items.php">Discarded Items</a></li>
 		</ul>
-
 	</nav>
 </header>
 
@@ -47,7 +47,7 @@
 
 <div class="container-fluid">
 
-	<h1>Your Closet</h1>
+	<h1>My Closet</h1>
 	<div id="info-box" class="col-sm-12 col-md-4">
 		<h3>
             YOU OWN <span id="no_items"></span> ITEMS
@@ -94,21 +94,18 @@
 		</div>
 
 		<h4>SORT BY</h4>
-		<div>
-			<form action="">
-				<input type="radio" name="measurement" value="times_worn"> Times Worn
-				<input type="radio" name="measurement" value="last_worn"> Days Ago Last Worn
-				<input type="radio" name="measurement" value="price"> Price
-				<input type="radio" name="measurement" value="cost_per_wear"> Cost Per Wear
-			</form>
+		<div class="button-group sort-by-button-group">
+			<button class="button is-checked" data-sort-value="lastworn">Last Worn</button>
+			<button class="button" data-sort-value="timesworn">Times Worn</button>
+			<button class="button" data-sort-value="price">Price</button>
+			<button class="button" data-sort-value="costpw">Cost Per Wear</button>	
 		</div>
 
 		<h4>ORDER BY</h4>
-		<div>
-			<form action="">
-				<input type="radio" name="order" value="ascending"> Ascending
-				<input type="radio" name="order" value="descending"> Descending
-			</form>
+		<div class="sort_asc_desc" id="sorts">
+			<button class="button button_asc" data-sort-by="price">Ascending</button>
+			<button class="button_desc" data-sort-by="price">Descending</button>
+			
 		</div>
 	</div>
     
@@ -216,6 +213,28 @@
 	    // Find form and submit it
 	    $('#newItemForm').submit();
 	});
+
+
+	$(function() {
+
+            $(".delbutton").click(function() {
+                var del_id = $(this).attr("id");
+                var info = 'id=' + del_id;
+                if (confirm("Sure you want to delete this post? This cannot be undone later.")) {
+                    $.ajax({
+                        type : "POST",
+                        url : "lib/delete.php", //URL to the delete php script
+                        data : info,
+                        success : function() {
+                        }
+                    });
+                    $(this).parents(".record").animate("fast").animate({
+                        opacity : "hide"
+                    }, "slow");
+                }
+                return false;
+            });
+        });
 
 </script>
 

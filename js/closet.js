@@ -9,6 +9,7 @@ jQuery(document).ready(function($){
             $("#no_items").text(item_data.length);
             fantastic(item_data);
             isotope_filter();
+            // isotope_sort();
         }, 
         error: function (err){
             console.log("error:"+err)
@@ -95,40 +96,51 @@ function fantastic(item_data) {
 		
 		page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
 
-		page_element += "<p> <span class='item_label'>Type: </span>" + item_data[i].Type + "</p>";
+		page_element += "<p > <span class='item_label'>Type: </span> <span class='item_type'>"+ item_data[i].Type + "</span></p>";
 
-		page_element += "<p> <span class='item_label'>Price: </span>$" + item_data[i].Price + "</p>";
+		page_element += "<p> <span class='item_label'>Price: </span>$<span class='item_price'>" + item_data[i].Price + "</span></p>";
 
-		page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</p>";
+		page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
 
 		page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
 
-		page_element += "<p><span class='item_label'>Times Worn: </span>" + item_data[i].Times_Worn + "</p>";
+		page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
 
-		page_element += "<p> <span class='item_label'>Last Worn: </span>";
+		page_element += "<p> <span class='item_label'>Last Worn: </span> <span class='item_lastworn'>";
 
 		if (daysago == 1){
-			page_element += daysago + "day ago";
+			page_element += daysago + "</span> day ago";
 		}
 		else if (daysago == 0){
-			page_element += "Today";
+			page_element += "</span>Today";
 		}
 		else {
-			page_element += daysago + " days ago";
+			page_element += daysago + "</span> days ago";
 		}
 		
+		page_element += "<div class='edit-button-container'><button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button class='edit-button delbutton' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
 		// insert into webpage into the div with id closet
 		var html = $.parseHTML(page_element);
 		$('#closet').append(html);
 	
 	};
+
+
+	
+
 };
 
 function isotope_filter() {
 	//http://codepen.io/desandro/pen/GFbAs
 
 	var $container = $('#closet').isotope({
-    	itemSelector: '.item-box'
+    	itemSelector: '.item-box',
+    	getSortData: {
+			price: '.item_price parseInt',
+			costpw: '.item_costpw parseFloat',
+			timesworn: '.item_timesworn parseInt',
+			lastworn: '.item_lastworn parseInt',
+    	}
 	});
 
 	// filter with colours and types
@@ -183,8 +195,53 @@ function isotope_filter() {
 		}
 	});
 
+	// bind sort button click
+  $('.sort-by-button-group').on( 'click', 'button', function() {
+    var sortValue = $(this).attr('data-sort-value');
+    $container.isotope({ sortBy: sortValue });
+    console.log(sortValue);
+  });
+
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+
+  // $(#sorts .button_asc).click(function() { 
+  // 	var sortByValue = $(this).attr('data-sort-by');
+  // 	$container.isotope({ sortBy: sortByValue, sortAscending : true});
+  // });
+
+  // $(#sorts .button_desc).click(function() { 
+  // 	var sortByValue = $(this).attr('data-sort-by');
+  // 	$container.isotope({ sortBy: sortByValue, sortAscending : false});
+  // });
+
 };
 
+
+// function isotope_sort() {
+// 	// bind sort button click
+//   $('.sort-by-button-group').on( 'click', 'button', function() {
+//     var sortValue = $(this).attr('data-sort-value');
+//     $container.isotope({ sortBy: sortValue });
+//     console.log(sortValue);
+//   });
+
+//   // change is-checked class on buttons
+//   $('.button-group').each( function( i, buttonGroup ) {
+//     var $buttonGroup = $( buttonGroup );
+//     $buttonGroup.on( 'click', 'button', function() {
+//       $buttonGroup.find('.is-checked').removeClass('is-checked');
+//       $( this ).addClass('is-checked');
+//     });
+//   });
+
+// };
 
 
 

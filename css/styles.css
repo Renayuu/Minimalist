@@ -165,3 +165,35 @@ img.displayed {
    height: 0;
    clear: both;
 }
+
+.is-checked {
+	background-color: #64688F;
+	color: white;
+	font-weight: bold;
+}
+
+button {
+	background-color: #D9DBED;
+	border-radius: 10px;
+	padding: 5px; 
+	box-shadow: none;
+	border: none;
+}
+
+button:hover {
+	background-color: #64688F;
+	color: white;
+	font-weight: bold;
+}
+
+.edit-button-container {
+	text-align: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.glyphicon {
+	margin-top: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
