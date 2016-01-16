@@ -125,9 +125,6 @@ function fantastic(item_data) {
 	
 	};
 
-
-	
-
 };
 
 function isotope_filter() {
@@ -196,52 +193,39 @@ function isotope_filter() {
 	});
 
 	// bind sort button click
-  $('.sort-by-button-group').on( 'click', 'button', function() {
-    var sortValue = $(this).attr('data-sort-value');
-    $container.isotope({ sortBy: sortValue });
-    console.log(sortValue);
-  });
+	$('.sort-by-button-group').on( 'click', 'button', function() {
+		var sortValue = $(this).attr('data-sort-value');
+		var sortDirection = $(this).attr('data-sort-direction');
+
+		// if($(this).hasClass('is-checked')) {
+			if ($(this).hasClass('button_asc')){
+              $(this).removeClass('button_asc').addClass('button_desc');
+              sortDirection = sortDirection === false;
+            }
+            else if ($(this).hasClass('button_desc')){
+              $(this).removeClass('button_desc').addClass('button_asc');
+              sortDirection == true;
+            }
+		// };
+		console.log(sortValue);
+		console.log(sortDirection);
+
+		$container.isotope({ 
+			sortBy: sortValue, 
+			sortAscending: sortDirection 
+		});
+	       
+	});
 
   // change is-checked class on buttons
-  $('.button-group').each( function( i, buttonGroup ) {
-    var $buttonGroup = $( buttonGroup );
-    $buttonGroup.on( 'click', 'button', function() {
-      $buttonGroup.find('.is-checked').removeClass('is-checked');
-      $( this ).addClass('is-checked');
-    });
-  });
-
-  // $(#sorts .button_asc).click(function() { 
-  // 	var sortByValue = $(this).attr('data-sort-by');
-  // 	$container.isotope({ sortBy: sortByValue, sortAscending : true});
-  // });
-
-  // $(#sorts .button_desc).click(function() { 
-  // 	var sortByValue = $(this).attr('data-sort-by');
-  // 	$container.isotope({ sortBy: sortByValue, sortAscending : false});
-  // });
-
+	$('.button-group').each( function( i, buttonGroup ) {
+		var $buttonGroup = $( buttonGroup );
+		$buttonGroup.on( 'click', 'button', function() {
+			$buttonGroup.find('.is-checked').removeClass('is-checked');
+			$( this ).addClass('is-checked');
+		});
+	});
 };
-
-
-// function isotope_sort() {
-// 	// bind sort button click
-//   $('.sort-by-button-group').on( 'click', 'button', function() {
-//     var sortValue = $(this).attr('data-sort-value');
-//     $container.isotope({ sortBy: sortValue });
-//     console.log(sortValue);
-//   });
-
-//   // change is-checked class on buttons
-//   $('.button-group').each( function( i, buttonGroup ) {
-//     var $buttonGroup = $( buttonGroup );
-//     $buttonGroup.on( 'click', 'button', function() {
-//       $buttonGroup.find('.is-checked').removeClass('is-checked');
-//       $( this ).addClass('is-checked');
-//     });
-//   });
-
-// };
 
 
 

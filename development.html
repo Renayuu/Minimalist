@@ -49,7 +49,7 @@
 <div class="container-fluid">
 
 	<h1>My Closet</h1>
-	<div id="info-box" class="col-sm-12 col-md-4">
+	<div id="info-box" class="col-sm-12 col-md-12">
 		<h3>
             YOU OWN <span id="no_items"></span> ITEMS
 		</h3>
@@ -62,23 +62,29 @@
 	</div>
 
 	<!-- Start of filters section -->
-	<div class="filters col-sm-12 col-md-8" id="filter-box" >
-		<h4>ONLY SHOW</h4>
-		<div id="type-group">
-			<h4>Item Type</h4>
-			<label><input type="checkbox" value=".tank_tops"/>Tank Tops</label>
-			<label><input type="checkbox" value=".short_sleeves_top"> Short Sleeve Tops</label>
-			<label><input type="checkbox" value=".long_sleeves_top"> Long Sleeve Tops</label>
-			<label><input type="checkbox" value=".dresses"> Dresses</label>
-			<label><input type="checkbox" value=".skirts"> Skirts</label>
-			<label><input type="checkbox" value=".shorts"> Shorts</label>
-			<label><input type="checkbox" value=".pants"> Pants</label>
+	<div class="filters col-sm-12 col-md-12" id="filter-box" >
+		<h4>FILTER BY</h4>
+		<div id="type-group" class="col-sm-12 col-md-9">
+			<input type="checkbox" value=".tank_tops" id="cb_tanktops" />
+			<label for="cb_tanktops">Tank Tops</label>
+			<input type="checkbox" value=".short_sleeves_top" id="cb_sstops">
+			<label for="cb_sstops">Short Sleeve Tops</label>
+			<input type="checkbox" value=".long_sleeves_top" id="cb_lstops">
+			<label for="cb_lstops">Long Sleeve Tops</label>
+			<input type="checkbox" value=".dresses" id="cb_dresses"> 
+			<label for="cb_dresses">Dresses</label>
+			<input type="checkbox" value=".skirts" id="cb_skirts">
+			<label for="cb_skirts">Skirts</label>
+			<input type="checkbox" value=".shorts" id="cb_shorts">
+			<label for="cb_shorts">Shorts</label>
+			<input type="checkbox" value=".pants" id="cb_pants"> 
+			<label for="cb_pants">Pants</label>
 		</div>
 
-		<div id="colour-group">
-			<h4>Colour</h4>
-			<select>
-		    	<option value="">--Select colour--</option>
+		<div id="colour-group" class="col-sm-12 col-md-3">
+			<label for="colours">Colour:</label>
+			<select name="colours">
+		    	<option value="">All Colours</option>
 		    	<option value=".black">Black</option>
 		    	<option value=".blue">Blue</option>
 		    	<option value=".brown">Brown</option>
@@ -93,21 +99,22 @@
 			    <option value=".yellow">Yellow</option>
 		  	</select>
 		</div>
+		<div class="clearfix"></div>
 
 		<h4>SORT BY</h4>
 		<div class="button-group sort-by-button-group">
-			<button class="button is-checked" data-sort-value="lastworn">Last Worn</button>
-			<button class="button" data-sort-value="timesworn">Times Worn</button>
-			<button class="button" data-sort-value="price">Price</button>
-			<button class="button" data-sort-value="costpw">Cost Per Wear</button>	
+			<button class="button is-checked button_desc" data-sort-value="lastworn" data-sort-direction="false">Last Worn&nbsp;</button>
+			<button class="button button_desc" data-sort-value="timesworn" data-sort-direction="false">Times Worn&nbsp;</button>
+			<button class="button button_desc" data-sort-value="price" data-sort-direction="false">Price&nbsp;</button>
+			<button class="button button_desc" data-sort-value="costpw" data-sort-direction="false">Cost Per Wear&nbsp;</button>	
 		</div>
 
-		<h4>ORDER BY</h4>
-		<div class="sort_asc_desc" id="sorts">
-			<button class="button button_asc" data-sort-by="price">Ascending</button>
-			<button class="button_desc" data-sort-by="price">Descending</button>
+		<!-- <h4>ORDER BY</h4>
+		<div class="button-group" id="sorts">
+			<button class="button" id="button_asc" data-sort-by="price">Ascending</button>
+			<button class="button" id="button_desc" data-sort-by="price">Descending</button>
 			
-		</div>
+		</div> -->
 	</div>
     
     <div class="clearfix"></div>
@@ -117,8 +124,8 @@
         <!-- Content goes here -->
     </div>
 
-    <div id="noResultsContainer">
-	   <div>No Matching clothes found</div>
+    <div id="noResultsContainer" style="display: none;">
+	   <div><h3>No Matching clothes found</h3></div>
 	</div>
 
 </div> 
