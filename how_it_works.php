@@ -27,6 +27,8 @@ $image_url2=''
 		<img class="displayed" src="images/colors.jpg" align="middle">
 		</font>
 
+		<br>
+
 		<p>TO BE ADDED: descriptions of new IoT features we build</p>
 
 		
