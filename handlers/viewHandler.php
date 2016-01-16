@@ -5,7 +5,7 @@ class ViewHandler{
 
 
         // include "views/closet.php";
-        include "development.html";
+        include "home.php";
     }
 }
 

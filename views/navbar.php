@@ -17,6 +17,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 
+
 <?php
 	// if ($PHP_SELF != '/closet.php')
 	// { $closet = 'none'; } else { $nav_closet = 'active'; }
@@ -31,7 +32,8 @@
 		<a class="navbar-brand" href="#"><img id="logo" alt="Minimize logo" src="images/minimize.png"></a>
 
 		<ul class="nav nav-pills pull-right">
-		  <li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">My Closet</a></li>
+			<li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">Home</a></li>
+		  <li role="presentation"><a href="development.html">My Closet</a></li>
 		  <li role="presentation"><a href="about.php">About</a></li>
 		  <li role="presentation"><a href="how_it_works.php">How It Works</a></li>
 		  <!-- <li role="presentation"><a href="development.html">Development</a></li>
