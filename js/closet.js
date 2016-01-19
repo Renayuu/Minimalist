@@ -106,16 +106,16 @@ function fantastic(item_data) {
 
 		page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
 
-		page_element += "<p> <span class='item_label'>Last Worn: </span> <span class='item_lastworn'>";
+		page_element += "<p> <span class='item_label'>Last Worn: </span> ";
 
 		if (daysago == 1){
-			page_element += daysago + "</span> day ago";
+			page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago";
 		}
 		else if (daysago == 0){
-			page_element += "</span>Today";
+			page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today";
 		}
-		else {
-			page_element += daysago + "</span> days ago";
+		else { 
+			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
 		}
 		
 		page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button class='edit-button delbutton' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
