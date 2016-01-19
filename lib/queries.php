@@ -2,7 +2,7 @@
 
 function getData() 
 {
-	$query = MySQL::getInstance()->query("SELECT * FROM Item ORDER BY Date_Last_Worn DESC");
+	$query = MySQL::getInstance()->query("SELECT * FROM Item WHERE Discarded!=1 ORDER BY Date_Last_Worn DESC");
     return $query->fetchALL();
 }
 
