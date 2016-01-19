@@ -9,12 +9,15 @@ jQuery(document).ready(function($){
             $("#no_items").text(item_data.length);
             fantastic(item_data);
             isotope_filter();
+            discardItem();
             // isotope_sort();
         }, 
         error: function (err){
             console.log("error:"+err)
         }
     });	
+
+    
 });
 
 function fantastic(item_data) {
@@ -118,7 +121,9 @@ function fantastic(item_data) {
 			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
 		}
 		
-		page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button class='edit-button delbutton' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
+		page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button id='"+item_data[i].Item_ID+"' type='submit' onclick='discardItem(id);' value='discard'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
+
+		// <button class='edit-button delbutton' id='" + item_data[i].Item_ID + "'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
 		// insert into webpage into the div with id closet
 		var html = $.parseHTML(page_element);
 		$('#closet').append(html);
@@ -227,6 +232,22 @@ function isotope_filter() {
 	});
 };
 
-
+function discardItem(someid) {
+	var itemID = someid;
+		
+	$.ajax({
+        type: "POST",
+        url: "../lib/update_discard.php",
+        data: { itemID : itemID },
+        success: function() {
+            console.log("discarded!")
+            window.location.reload();
+        }, 
+        error: function (err){
+            console.log("error:"+err)
+        }
+    });	
+	
+};
 
 
