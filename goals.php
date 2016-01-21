@@ -21,7 +21,7 @@
 
 	<h3 align="center">
             You want to own  
-            <?php echo count($items); ?> 
+            #
             or less items.
 	</h3>
 
@@ -30,7 +30,7 @@
 
 	<h3 align="center">
             You have 
-            <?php echo count($items); ?> 
+            #
             items left to reach your goal.
 	</h3>
 

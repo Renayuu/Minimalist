@@ -13,7 +13,7 @@ if($conn === false){
 $goal = mysqli_real_escape_string($conn, $_POST['Goal']);
 
 // attempt insert query execution
-$sql = "INSERT INTO `Goal` (`Goal`) VALUES ('$goal')";
+$sql = "UPDATE `Goal` SET `Goal_Num` = '$goal' WHERE `Goal_ID` = '1'";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
@@ -27,7 +27,7 @@ mysqli_close($conn);
 
 <div>
     
-<form action="http://s4325075-minimalist.uqcloud.net/goals.php">
+<form action="http://s4325075-minimalist.uqcloud.net/goal">
     <input type="submit" value="Go Back">
 </form>
     
