@@ -21,7 +21,7 @@
 
 	<h3 align="center">
             You want to own  
-            #
+            # <!--SELECT Goal_Num FROM Goal WHERE Goal_ID = '1'-->
             or less items.
 	</h3>
 
@@ -30,7 +30,7 @@
 
 	<h3 align="center">
             You have 
-            #
+            # <!--first value - second value-->
             items left to reach your goal.
 	</h3>
 
@@ -60,7 +60,7 @@
 	      <div class="modal-body">
 	        
 		        <p>
-			        <label for="goal">I want to own  </label><input type="text" size="3" name="Goal" id="Goal"><label for="goal">  or less items.</label>
+			        <label for="goal">I want to own  </label> <input type="text" size="3" name="Goal_Num" id="Goal_Num"> <label for="goal">  or less items.</label>
 		        </p>
 
 		        <input type="button" id="editGoalSubmit" class="btn btn-primary" value="Submit" data-dismiss="modal">

@@ -10,10 +10,10 @@ if($conn === false){
  
 // Escape user inputs for security
 // $submission_date = mysqli_real_escape_string($conn, $_POST['Submission_Date']);
-$goal = mysqli_real_escape_string($conn, $_POST['Goal']);
+$goal = mysqli_real_escape_string($conn, $_POST['Goal_Num']);
 
 // attempt insert query execution
-$sql = "UPDATE `Goal` SET `Goal_Num` = '$goal' WHERE `Goal_ID` = '1'";
+$sql = "UPDATE Goal SET Goal_Num = '$goal' WHERE Goal_ID = '1'";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
