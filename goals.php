@@ -56,14 +56,14 @@
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title" id="myModalLabel">EDIT YOUR GOAL</h4>
 	      </div>
-	      <form action="insert_goal.php" method="post" name="edityourgoal" enctype="multipart/form-data" id="editGoalForm">
+	      <form action="insert_goal.php" method="post" name="edityourgoal" id="editGoalForm">
 	      <div class="modal-body">
 	        
 		        <p>
 			        <label for="goal">I want to own  </label> <input type="text" size="3" name="Goal_Num" id="Goal_Num"> <label for="goal">  or less items.</label>
 		        </p>
 
-		        <input type="button" id="editGoalSubmit" class="btn btn-primary" value="Submit" data-dismiss="modal">
+		        <input type="submit" id="editGoalSubmit" class="btn btn-primary" value="Submit" data-dismiss="modal">
 	            <!--go to an ajax function that updates the last two numbers-->
 	        
 	      </div>

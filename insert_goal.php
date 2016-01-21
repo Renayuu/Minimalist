@@ -12,6 +12,8 @@ if($conn === false){
 // $submission_date = mysqli_real_escape_string($conn, $_POST['Submission_Date']);
 $goal = mysqli_real_escape_string($conn, $_POST['Goal_Num']);
 
+phpinfofofof();
+
 // attempt insert query execution
 $sql = "UPDATE Goal SET Goal_Num = '$goal' WHERE Goal_ID = '1'";
 
