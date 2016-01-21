@@ -1,29 +1,76 @@
 <?php include ("views/navbar.php"); ?>
 
+
+
 <title>Minimize: Goals</title>
 
-<div class="container">
+<div class="container-fluid">
+
+<div id="info-box" class="col-sm-12 col-md-12">
 
 	<h1 align = "center">GOALS</h1>
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newItemModal">
+
+	<h3 align="center">
+            You own 
+            <?php echo count($items); ?> 
+            items.
+	</h3>
+
+	<br> 
+	<br> 
+
+	<h3 align="center">
+            You want to own  
+            <?php echo count($items); ?> 
+            or less items.
+	</h3>
+
+	<br> 
+	<br> 
+
+	<h3 align="center">
+            You have 
+            <?php echo count($items); ?> 
+            items left to reach your goal.
+	</h3>
+
+	<br> 
+	<br> 
+
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
 		  edit your goal
 	</button>
-	<h3>
-            You own <span id="no_items"></span> items.
-	</h3>
-
-	<br> 
-	<br> 
-
-	<h3>
-            You want to own XXXXX or less items.
-	</h3>
-
-	<br> 
-	<br> 
-
-	<h3>
-            You have XXXXX items left to reach your goal.
-	</h3>
 
 </div>
+
+</div>
+
+<!-- EDIT GOAL Modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="editGoalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">EDIT YOUR GOAL</h4>
+	      </div>
+	      <form action="insert_goal.php" method="post" name="edityourgoal" enctype="multipart/form-data" id="editGoalForm">
+	      <div class="modal-body">
+	        
+		        <p>
+			        <label for="goal">I want to own  </label><input type="text" size="3" name="Goal" id="Goal"><label for="goal">  or less items.</label>
+		        </p>
+
+		        <input type="button" id="editGoalSubmit" class="btn btn-primary" value="Submit" data-dismiss="modal">
+	            <!--go to an ajax function that updates the last two numbers-->
+	        
+	      </div>
+	      </form>
+
+	    </div> <!-- end modalContent -->
+	  </div> <!-- end modalDialog -->
+	</div> <!-- end my modal -->
+
+</body>
