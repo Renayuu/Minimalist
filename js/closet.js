@@ -9,7 +9,6 @@ jQuery(document).ready(function($){
             $("#no_items").text(item_data.length);
             fantastic(item_data);
             isotope_filter();
-            discardItem();
             // isotope_sort();
         }, 
         error: function (err){
@@ -233,21 +232,25 @@ function isotope_filter() {
 };
 
 function discardItem(someid) {
-	var itemID = someid;
-		
+	var itemID = 'itemID=' + someid;
 	$.ajax({
         type: "POST",
         url: "../lib/update_discard.php",
-        data: { itemID : itemID },
+        data: itemID,
         success: function() {
-            console.log("discarded!")
-            window.location.reload();
+        	$("#discardedModal").modal("show");
+        	$("#discardedModal").on('hide', function () {
+		        window.location.reload();
+			});
         }, 
         error: function (err){
             console.log("error:"+err)
         }
-    });	
+    });
 	
 };
+
+
+
 
 

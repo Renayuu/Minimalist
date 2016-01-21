@@ -24,7 +24,6 @@
 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 
-
 <body>
 
 <header>
@@ -42,7 +41,6 @@
 
 	</nav>
 </header>
-<?php include ("views/navbar.php"); ?>
 
 <div class="container-fluid">
 
@@ -198,15 +196,30 @@
 	  </div> <!-- end modalDialog -->
 	</div> <!-- end my modal -->
 
+
+
+	<!-- Discarded  Modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="discardedModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4>Item Discarded</h4>
+	      </div>
+
+	    </div> <!-- end modalContent -->
+	  </div> <!-- end modalDialog -->
+	</div> <!-- end discarded modal -->
+
 </body>
 
 
 <script type="text/javascript">
-	  // $(function() {
-	  //   $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
-	  // });
-
-	$("#newItemModal").on('hide', function () {
+	  
+	$("#newItemModal").on('hide', function() {
         window.location.reload();
 	});
 
@@ -222,25 +235,24 @@
 
 
 	$(function() {
-
-            $(".delbutton").click(function() {
-                var del_id = $(this).attr("id");
-                var info = 'id=' + del_id;
-                if (confirm("Sure you want to delete this post? This cannot be undone later.")) {
-                    $.ajax({
-                        type : "POST",
-                        url : "lib/delete.php", //URL to the delete php script
-                        data : info,
-                        success : function() {
-                        }
-                    });
-                    $(this).parents(".record").animate("fast").animate({
-                        opacity : "hide"
-                    }, "slow");
-                }
-                return false;
-            });
+        $(".delbutton").click(function() {
+            var del_id = $(this).attr("id");
+            var info = 'id=' + del_id;
+            if (confirm("Sure you want to delete this post? This cannot be undone later.")) {
+                $.ajax({
+                    type : "POST",
+                    url : "lib/delete.php", //URL to the delete php script
+                    data : info,
+                    success : function() {
+                    }
+                });
+                $(this).parents(".record").animate("fast").animate({
+                    opacity : "hide"
+                }, "slow");
+            }
+            return false;
         });
+    });
 
 </script>
 
