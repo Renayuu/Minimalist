@@ -68,7 +68,7 @@ mysqli_close($conn);
 
 <div>
     
-<form action="http://s4325075-minimalist.uqcloud.net/">
+<form action="http://s4325075-minimalist.uqcloud.net/development.html">
     <input type="submit" value="Go Back">
 </form>
     
