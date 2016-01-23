@@ -96,31 +96,32 @@ function fantastic(item_data) {
         
         page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
 
-        page_element += "<p > <span class='item_label'>Type: </span> <span class='item_type'>"+ item_data[i].Type + "</span></p>";
+        //page_element += "<p > <span class='item_label'>Type: </span> <span class='item_type'>"+ item_data[i].Type + "</span></p>";
 
-        page_element += "<p> <span class='item_label'>Price: </span>$<span class='item_price'>" + item_data[i].Price + "</span></p>";
+        //page_element += "<p> <span class='item_label'>Price: </span>$<span class='item_price'>" + item_data[i].Price + "</span></p>";
 
-        page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
+        //page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
 
-        page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
+        //page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
 
-        page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
+        //page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
 
-        page_element += "<p> <span class='item_label'>Last Worn: </span> ";
+        //page_element += "<p> <span class='item_label'>Last Worn: </span> ";
 
-        if (daysago == 1){
-            page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago";
-        }
-        else if (daysago == 0){
-            page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today";
-        }
-        else { 
-            page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
-        }
+        //if (daysago == 1){
+        //    page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago";
+        //}
+       // else if (daysago == 0){
+         //   page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today";
+        //}
+        //else { 
+          //  page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
+        //}
         
+        page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
 
-        //page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button class='edit-button delbutton' ><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
-        
+        page_element += "<div class='edit-button-container'><button class='edit-button edit-button-2'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"; 
+       
         // insert into webpage into the div with id closet
         var html = $.parseHTML(page_element);
         $('#discarded').append(html);

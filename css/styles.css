@@ -230,6 +230,10 @@ button:hover {
 	margin-bottom: 10px;
 }
 
+.edit-button-2 {
+	padding-bottom: 12px;
+}
+
 .glyphicon {
 	margin-top: 4px;
 	padding-right: 5px;
