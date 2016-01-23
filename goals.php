@@ -56,7 +56,7 @@
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title" id="myModalLabel">EDIT YOUR GOAL</h4>
 	      </div>
-	      <form action="insert_goal.php" method="post" name="edityourgoal" id="editGoalForm">
+	      <form action="insert_goal.php" method="post" name="edityourgoal" enctype="multipart/form-data" id="editGoalForm">
 	      <div class="modal-body">
 	        
 		        <p>
@@ -74,3 +74,21 @@
 	</div> <!-- end my modal -->
 
 </body>
+
+<script type="text/javascript">
+
+	$("#editGoalModal").on('hide', function () {
+        window.location.reload();
+	});
+
+	// submits modal form - fixes form submission problem, tutorial from:
+	//http://stackoverflow.com/questions/9349142/twitter-bootstrap-2-modal-form-dialogs/9349329#9349329
+	$('#editGoalSubmit').on('click', function(e){
+	    // We don't want this to act as a link so cancel the link action
+	    e.preventDefault();
+
+	    // Find form and submit it
+	    $('#editGoalForm').submit();
+	});
+
+</script>
