@@ -12,10 +12,8 @@ if($conn === false){
 // $submission_date = mysqli_real_escape_string($conn, $_POST['Submission_Date']);
 $goal = mysqli_real_escape_string($conn, $_POST['Goal_Num']);
 
-phpinfofofof();
-
 // attempt insert query execution
-$sql = "UPDATE Goal SET Goal_Num = '$goal' WHERE Goal_ID = '1'";
+$sql = "UPDATE Goal SET Goal_Num = '".$goal."' WHERE Goal_ID = '1'";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
@@ -26,11 +24,3 @@ if(mysqli_query($conn, $sql)){
 // close connection
 mysqli_close($conn);
 ?>
-
-<div>
-    
-<form action="http://s4325075-minimalist.uqcloud.net/goal">
-    <input type="submit" value="Go Back">
-</form>
-    
-</div>

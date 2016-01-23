@@ -232,12 +232,15 @@ function isotope_filter() {
 };
 
 function discardItem(someid) {
-	var itemID = 'itemID=' + someid;
+	//var data = 'itemID=' + someid;
 	$.ajax({
         type: "POST",
         url: "../lib/update_discard.php",
-        data: itemID,
-        success: function() {
+        data: {
+        	"itemID;"+someid
+        },
+        success: function(msg) {
+        	console.log(msg);
         	$("#discardedModal").modal("show");
         	$("#discardedModal").on('hide', function () {
 		        window.location.reload();
