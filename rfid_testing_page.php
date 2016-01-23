@@ -5,25 +5,7 @@ require_once 'utils.php';
 date_default_timezone_set('Australia/Brisbane');
 
 
-//POSTING and SELECTING the scanned RFID tag
-$p_RFID = $_POST['rfidscan']; //get and store from the web address
-//$p_RFID = (string)$p_RFIDa;
-echo "hello ".$_POST['rfidscan']." ";
-
-
-//$sql = "SELECT Item_ID, Times_Worn FROM Item WHERE RFID_Tag = :p_rfid";
-$stmt = $db->prepare("SELECT Item_ID, Times_Worn FROM Item WHERE RFID_Tag = :p_rfid");
-$stmt->bindParam(":p_rfid", $p_RFID, PDO::PARAM_STR);
-$stmt->execute();
-$result = $stmt->fetch();
-$item_id = $result["Item_ID"];
-
-echo "item id: ".$item_id;
-$times_worn = $result["Times_Worn"];
-
-$new_times_worn = $times_worn + 1; //incrementing
-
-//Get the temperature
+//Get the latest temperature
 //read the json file contents code from http://www.startutorial.com/articles/view/php-curl
 //step1
 $cSession = curl_init(); 
@@ -37,7 +19,35 @@ $result=curl_exec($cSession);
 curl_close($cSession);
 
 $data = json_decode($result, true);
-$temperature = $data[main][temp];
+$latest_temp = $data[main][temp];
+
+//POSTING and SELECTING the scanned RFID tag
+$p_RFID = $_POST['rfidscan']; //get and store from the web address
+echo "hello ".$_POST['rfidscan']." ";
+
+//$sql = "SELECT Item_ID, Times_Worn FROM Item WHERE RFID_Tag = :p_rfid";
+$stmt = $db->prepare("SELECT Item_ID, Times_Worn, Avg_Temp FROM Item WHERE RFID_Tag = :p_rfid");
+$stmt->bindParam(":p_rfid", $p_RFID, PDO::PARAM_STR);
+$stmt->execute();
+$result = $stmt->fetch();
+$item_id = $result["Item_ID"];
+
+echo "item id: ".$item_id;
+$times_worn = $result["Times_Worn"];
+$avg_temp = $result["Avg_Temp"];
+
+//incrementing the number of times worn
+$new_times_worn = $times_worn + 1;
+
+if ($avg_temp == 0)
+{
+    $new_avg_temp = $latest_temp;
+}
+else
+{
+    //calculate the average temperature
+    $new_avg_temp = ($times_worn * $avg_temp + $latest_temp) / $new_times_worn;
+}
 
 //INSERT Date_Worn into Wearing_Data
 try 
@@ -46,7 +56,7 @@ try
     
     $stmt->bindValue(":date_worn", date("Y-m-d H:i:s"), PDO::PARAM_STR);
     $stmt->bindValue(":item_id", $item_id, PDO::PARAM_STR);
-    $stmt->bindValue(":temperature", $temperature, PDO::PARAM_STR);
+    $stmt->bindValue(":temperature", $latest_temp, PDO::PARAM_STR);
     
     $stmt->execute();
                      
@@ -61,9 +71,10 @@ catch (PDOException $e)
 //UPDATE Date_Last_Worn and Times_Worn into Item
 try 
 {
-    $stmt = $db->prepare("UPDATE Item SET Times_Worn=:new_times_worn, Date_Last_Worn=:date_worn WHERE Item_ID=:item_id");
+    $stmt = $db->prepare("UPDATE Item SET Times_Worn=:new_times_worn, Date_Last_Worn=:date_worn, Avg_Temp=:new_avg_temp WHERE Item_ID=:item_id");
     
     $stmt->bindValue(":new_times_worn", $new_times_worn, PDO::PARAM_STR);
+    $stmt->bindValue(":new_avg_temp", $new_avg_temp, PDO::PARAM_STR);
     $stmt->bindValue(":date_worn", date("Y-m-d H:i:s"), PDO::PARAM_STR);
     $stmt->bindValue(":item_id", $item_id, PDO::PARAM_STR);
     

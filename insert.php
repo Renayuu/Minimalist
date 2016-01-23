@@ -15,6 +15,7 @@ $price = mysqli_real_escape_string($conn, $_POST['Price']);
 $colour = mysqli_real_escape_string($conn, $_POST['Colour']);
 $material = mysqli_real_escape_string($conn, $_POST['Material']);
 $description = mysqli_real_escape_string($conn, $_POST['Description']);
+$avg_temp = 0;
 //$date = date("Y-m-d");
 
 function GetImageExtension($imagetype)
@@ -40,21 +41,13 @@ if (!empty($_FILES["uploadimage"]["name"])) {
 	$imagename=date("Y-m-d")."-".time().$ext;
 	$target_path = "uploadclothes/".$imagename;
 
-    /* $query_upload="INSERT into 'Upload_Image' ('Images_Path','Submission_Date') VALUES ('".$target_path."','".date("Y-m-d")."')"; */
-    
-/*	mysql_query($query_upload) or die("error in $query_upload == ----> ".mysql_error());  
-	
-}else{
-
-   exit("Error While uploading image on the server");
-}*/ 
     
 move_uploaded_file($temp_name, $target_path);
 
 }
 
 // attempt insert query execution
-$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`,`Description`, `Image_Path`) VALUES ('$type', '$price', '$colour','$material','$description','$target_path')";
+$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`,`Description`, `Image_Path`,  `Avg_Temp`) VALUES ('$type', '$price', '$colour','$material','$description','$target_path','$avg_temp')";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
