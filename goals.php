@@ -12,30 +12,27 @@
 
 	<h3 align="center">
             You own 
-            <?php echo count($items); ?> 
-            <span id="my_clothes" data-val="<?php echo count($items); ?>"></span>
+            <b><?php echo count($items); ?></b>
+            <b><span id="my_clothes" data-val="<?php echo count($items); ?>"></span></b>
             items.
 	</h3>
 
 	<br> 
-	<br> 
 
 	<h3 align="center">
             You want to own  
-            <span id="my_goal">#</span>
+            <b><span id="my_goal">#</span></b>
             or less items.
 	</h3>
 
 	<br> 
-	<br> 
 
 	<h3 align="center">
             You have 
-            <span id="clothes_left">#</span>
+            <b><span id="clothes_left">#</span></b>
             items left to reach your goal.
 	</h3>
 
-	<br> 
 	<br> 
 
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
