@@ -237,7 +237,7 @@ function discardItem(someid) {
         type: "POST",
         url: "../lib/update_discard.php",
         data: {
-        	"itemID;"+someid
+        	"itemID":someid
         },
         success: function(msg) {
         	console.log(msg);
