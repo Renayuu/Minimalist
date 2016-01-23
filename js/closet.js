@@ -9,7 +9,6 @@ jQuery(document).ready(function($){
             $("#no_items").text(item_data.length);
             fantastic(item_data);
             isotope_filter();
-            // isotope_sort();
         }, 
         error: function (err){
             console.log("error:"+err)
@@ -122,7 +121,6 @@ function fantastic(item_data) {
 		
 		page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button id='"+item_data[i].Item_ID+"' type='submit' onclick='discardItem(id);' value='discard'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
 
-		// <button class='edit-button delbutton' id='" + item_data[i].Item_ID + "'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button></div>";
 		// insert into webpage into the div with id closet
 		var html = $.parseHTML(page_element);
 		$('#closet').append(html);
@@ -232,24 +230,24 @@ function isotope_filter() {
 };
 
 function discardItem(someid) {
-	//var data = 'itemID=' + someid;
-	$.ajax({
-        type: "POST",
-        url: "../lib/update_discard.php",
-        data: {
-        	"itemID":someid
-        },
-        success: function(msg) {
-        	console.log(msg);
-        	$("#discardedModal").modal("show");
-        	$("#discardedModal").on('hide', function () {
-		        window.location.reload();
-			});
-        }, 
-        error: function (err){
-            console.log("error:"+err)
-        }
-    });
+	if(confirm("Are you sure you want to discard this?")) {
+		$.ajax({
+	        type: "POST",
+	        url: "../lib/update_discard.php",
+	        data: {
+	        	"itemID":someid
+	        },
+	        success: function(msg) {
+	        	console.log(msg);
+	        	window.location.reload();
+	        }, 
+	        error: function (err){
+	            console.log("error:"+err)
+	        }
+	    });
+	};
+	
+		
 	
 };
 
