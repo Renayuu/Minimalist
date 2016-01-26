@@ -154,6 +154,7 @@ button, .btn  {
 	padding: 5px; 
 	box-shadow: none;
 	border: none;
+	margin-left: 5px;
 }
 
 .btn {
@@ -239,8 +240,8 @@ button:hover {
 	margin-bottom: 10px;
 }
 
-.edit-button-2 {
-	padding-bottom: 12px;
+.edit-button-2 .glyphicon{
+	padding-bottom: 10px;
 }
 
 .glyphicon {
@@ -269,5 +270,4 @@ button:hover {
 .ui-datepicker a {
     text-decoration: none;
 }*/
-
 

@@ -120,7 +120,7 @@ function fantastic(item_data) {
         
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
 
-        page_element += "<div class='edit-button-container' 'edit-button-2'>";
+        page_element += "<div class='edit-button-container edit-button-2'>";
 
         page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='addPhoto(id);' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
 
