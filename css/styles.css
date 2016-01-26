@@ -216,6 +216,15 @@ button:hover {
 	font-size: 16px;	
 }
 
+#favourite-group label {
+	font-weight: 300;
+	font-size: 16px;	
+}
+
+#colour-group, #favourite-group {
+	display: inline;
+}
+
 .button-group button.is-checked.button_asc:after {
 	content: url(/images/arrow_up.png);
 }

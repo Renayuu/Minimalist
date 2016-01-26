@@ -36,7 +36,7 @@
 	<br> 
 
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
-		  edit your goal
+		  Edit Your Goal
 	</button>
 
 </div>

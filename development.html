@@ -52,7 +52,7 @@
 
 		<!-- Button trigger for modal -->
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newItemModal">
-		  add a new item
+		  Add New Item
 		</button>
 
 	</div>
@@ -60,7 +60,7 @@
 	<!-- Start of filters section -->
 	<div class="filters col-sm-12 col-md-12" id="filter-box" >
 		<h4>FILTER BY</h4>
-		<div id="type-group" class="col-sm-12 col-md-9">
+		<div id="type-group" class="col-sm-12 col-md-12">
 			<input type="checkbox" value=".tank_tops" id="cb_tanktops" />
 			<label for="cb_tanktops">Tank Tops</label>
 			<input type="checkbox" value=".short_sleeves_top" id="cb_sstops">
@@ -76,8 +76,9 @@
 			<input type="checkbox" value=".pants" id="cb_pants"> 
 			<label for="cb_pants">Pants</label>
 		</div>
-
-		<div id="colour-group" class="col-sm-12 col-md-3">
+	
+	<div class="col-sm-12 col-md-12">
+		<div id="colour-group">
 			<label for="colours">Colour:</label>
 			<select name="colours">
 		    	<option value="">All Colours</option>
@@ -95,6 +96,13 @@
 			    <option value=".yellow">Yellow</option>
 		  	</select>
 		</div>
+
+		<div id="favourite-group">
+			<input type="checkbox" value=".favourites" id="cb_favourites">
+			<label for="cb_favourites">Favourites</label>
+		</div>
+	</div>
+
 		<div class="clearfix"></div>
 
 		<h4>SORT BY</h4>
@@ -135,7 +143,7 @@
 
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">ADD A NEW ITEM</h4>
+	        <h4 class="modal-title" id="myModalLabel">ADD NEW ITEM</h4>
 	      </div>
 	      <form action="insert.php" method="post" name="addnewitem" enctype="multipart/form-data" id="newItemForm">
 	      <div class="modal-body">
@@ -160,10 +168,10 @@
 			        <label for="Price">Item Price:</label>
 			        <input type="text" name="Price" id="Price">
 		        </p>
-	            <p>
+	            <!-- <p>
 			        <label for="Story">Item Story:</label>
 	                <textarea name="Story" id="Story"></textarea>
-		        </p>
+		        </p> -->
 	            <p>
 	                <label for="Colour">Item Colour:</label>
 	                <!-- <input type="text" name="Colour" id="Colour">-->

@@ -57,40 +57,44 @@ function fantastic(item_data) {
 
 		// Add classes for colors
 		if (item_data[i].Colour == "Multi") {
-			page_element += " multi"
+			page_element += " multi";
 		}
 		if (item_data[i].Colour == "Black") {
-			page_element += " black"
+			page_element += " black";
 		}
 		if (item_data[i].Colour == "Gray") {
-			page_element += " gray"
+			page_element += " gray";
 		}
 		if (item_data[i].Colour == "White") {
-			page_element += " white"
+			page_element += " white";
 		}
 		if (item_data[i].Colour == "Red") {
-			page_element += " red"
+			page_element += " red";
 		}
 		if (item_data[i].Colour == "Orange") {
-			page_element += " orange"
+			page_element += " orange";
 		}
 		if (item_data[i].Colour == "Yellow") {
-			page_element += " yellow"
+			page_element += " yellow";
 		}
 		if (item_data[i].Colour == "Green") {
-			page_element += " green"
+			page_element += " green";
 		}
 		if (item_data[i].Colour == "Blue") {
-			page_element += " blue"
+			page_element += " blue";
 		}
 		if (item_data[i].Colour == "Purple") {
-			page_element += " purple"
+			page_element += " purple";
 		}
 		if (item_data[i].Colour == "Pink") {
-			page_element += " pink"
+			page_element += " pink";
 		}
 		if (item_data[i].Colour == "Brown") {
-			page_element += " brown"
+			page_element += " brown";
+		}
+
+		if (item_data[i].Favourite == "1") {
+			page_element += " favourites";
 		}
 
 		page_element += "'>";
@@ -119,7 +123,18 @@ function fantastic(item_data) {
 			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
 		}
 		
-		page_element += "<div class='edit-button-container'> <button class='edit-button'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button> <button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button> <button id='"+item_data[i].Item_ID+"' type='submit' onclick='discardItem(id);' value='discard'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
+		if (item_data[i].Favourite == "0")
+		{
+			page_element += "<div class='edit-button-container'><button id='"+item_data[i].Item_ID+"' type='submit' onclick='favouriteItem(id);' value='favourite'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button>"
+		}
+		else if (item_data[i].Favourite == "1")
+		{
+			page_element += "<div class='edit-button-container'><button id='"+item_data[i].Item_ID+"' type='submit' onclick='unfavouriteItem(id);' value='unfavourite'><span class='glyphicon glyphicon-star' aria-hidden='true'></span></button>"
+		}
+		
+		// page_element += "<button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"
+		
+		page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='discardItem(id);' value='discard'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
 
 		// insert into webpage into the div with id closet
 		var html = $.parseHTML(page_element);
@@ -145,8 +160,10 @@ function isotope_filter() {
 	// filter with colours and types
 	var $colours = $('#colour-group select');
 	var $types = $('#type-group input');
+	var $favourites = $('#favourite-group input');
   
-	$colours.add( $types ).change( function() {
+	$colours.add( $types ).add( $favourites ).change( function() {
+		console.log("hello");
 	    // map input values to an array
 	    var exclusives = [];
 	    var inclusives = [];
@@ -165,6 +182,16 @@ function isotope_filter() {
 	        inclusives.push( elem.value );
 	      }
 	    });
+
+	    $favourites.each( function( i, elem ) {
+	      // if checkbox, use value if checked
+	      if ( elem.checked ) {
+	        exclusives.push( elem.value );
+	      }
+	});
+
+
+	    //item_data[i].Favourites == "1"
 
 	    // combine exclusive and inclusive filters
 
@@ -246,10 +273,43 @@ function discardItem(someid) {
 	        }
 	    });
 	};
-	
-		
-	
 };
+	
+function favouriteItem(someid)	{
+		$.ajax({
+	        type: "POST",
+	        url: "../lib/update_favourite.php",
+	        data: {
+	        	"itemID":someid
+	        },
+	        success: function(msg) {
+	        	console.log(msg);
+	        	window.location.reload();
+	        }, 
+	        error: function (err){
+	            console.log("error:"+err)
+	        }
+	    });
+	};
+
+function unfavouriteItem(someid)	{
+		$.ajax({
+	        type: "POST",
+	        url: "../lib/update_unfavourite.php",
+	        data: {
+	        	"itemID":someid
+	        },
+	        success: function(msg) {
+	        	console.log(msg);
+	        	window.location.reload();
+	        }, 
+	        error: function (err){
+	            console.log("error:"+err)
+	        }
+	    });
+	};
+	
+
 
 
 

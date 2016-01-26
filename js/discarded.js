@@ -120,7 +120,11 @@ function fantastic(item_data) {
         
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
 
-        page_element += "<div class='edit-button-container'><button class='edit-button edit-button-2'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"; 
+        page_element += "<div class='edit-button-container' 'edit-button-2'>";
+
+        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='addPhoto(id);' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
+
+        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"; 
        
         // insert into webpage into the div with id closet
         var html = $.parseHTML(page_element);
