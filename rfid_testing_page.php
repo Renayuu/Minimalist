@@ -6,16 +6,12 @@ date_default_timezone_set('Australia/Brisbane');
 
 
 //Get the latest temperature
-//read the json file contents code from http://www.startutorial.com/articles/view/php-curl
-//step1
+//'read the json file contents' code from http://www.startutorial.com/articles/view/php-curl
 $cSession = curl_init(); 
-//step2
 curl_setopt($cSession,CURLOPT_URL,"http://api.openweathermap.org/data/2.5/weather?q=Brisbane&&units=metric&APPID=3f66b3cd437c6662ec552179273e2832");
 curl_setopt($cSession,CURLOPT_RETURNTRANSFER,true);
 curl_setopt($cSession,CURLOPT_HEADER, false); 
-//step3
 $result=curl_exec($cSession);
-//step4
 curl_close($cSession);
 
 $data = json_decode($result, true);
