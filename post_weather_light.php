@@ -1,6 +1,5 @@
 <?php
 
-//just try
 
 require_once 'utils.php';
 
