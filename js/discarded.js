@@ -29,7 +29,7 @@ function fantastic(item_data) {
         
         // construct the web page elements
         var page_element = "";
-        page_element += "<div class='item-box col-xs-6 col-sm-4 col-md-3 ";
+        page_element += "<div class='row'><div class='item'><div class='item-box col-xs-6 col-sm-4 col-md-3 ";
 
         //add classes for item type
         if (item_data[i].Type == "Tank Tops") {
@@ -124,7 +124,7 @@ function fantastic(item_data) {
 
         page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='addPhoto(id);' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
 
-        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"; 
+        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button></div></div></div>"; 
        
         // insert into webpage into the div with id closet
         var html = $.parseHTML(page_element);
