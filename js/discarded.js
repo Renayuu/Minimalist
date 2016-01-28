@@ -8,12 +8,18 @@ jQuery(document).ready(function($){
             item_data = JSON.parse(data);
             $("#no_items").text(item_data.length);
             fantastic(item_data);
+
+            $('#discarded').isotope({
+                itemSelector: '.item-box',
+                masonry: {
+                }
+              });
+
         }, 
         error: function (err){
             console.log("error:"+err)
         }
     });	
-
     
 });
 
@@ -29,7 +35,7 @@ function fantastic(item_data) {
         
         // construct the web page elements
         var page_element = "";
-        page_element += "<div class='row'><div class='item'><div class='item-box col-xs-6 col-sm-4 col-md-3 ";
+        page_element += "<div class='item-box col-xs-6 col-sm-4 col-md-3 ";
 
         //add classes for item type
         if (item_data[i].Type == "Tank Tops") {
@@ -96,27 +102,6 @@ function fantastic(item_data) {
         
         page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
 
-        //page_element += "<p > <span class='item_label'>Type: </span> <span class='item_type'>"+ item_data[i].Type + "</span></p>";
-
-        //page_element += "<p> <span class='item_label'>Price: </span>$<span class='item_price'>" + item_data[i].Price + "</span></p>";
-
-        //page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
-
-        //page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
-
-        //page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
-
-        //page_element += "<p> <span class='item_label'>Last Worn: </span> ";
-
-        //if (daysago == 1){
-        //    page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago";
-        //}
-       // else if (daysago == 0){
-         //   page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today";
-        //}
-        //else { 
-          //  page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
-        //}
         
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
 
@@ -124,7 +109,7 @@ function fantastic(item_data) {
 
         page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='addPhoto(id);' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
 
-        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button></div></div></div>"; 
+        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button></div>"; 
        
         // insert into webpage into the div with id closet
         var html = $.parseHTML(page_element);

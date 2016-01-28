@@ -164,16 +164,17 @@ header {
 
 /***********  CLOSET ITEMS  ***************/
 
-
-.item {
-	display: inline-block;
+#discarded:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .item-box {
+	float: left;
 	border: solid 2px #fff;
     padding: 0;
-    display: block;
-    position: relative;
+
 }
 
 .item_label {
