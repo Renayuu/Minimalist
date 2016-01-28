@@ -14,10 +14,6 @@
    height: 0;
    clear: both;
 }
-#home-container {
-	background-image: url("../images/closet.jpg") no-repeat center center fixed;
-    background-color: #cccccc;
-}
 
 
 
@@ -57,6 +53,84 @@ header {
 
 
 
+/**************** HOME PAGE *****************/
+
+.hero {
+    background-image:url('../images/homepage_hero.jpg');
+    background-size: cover;
+    background-color: #EEEEEE;
+    height:75%;
+  
+  }
+
+.hero h2 {
+	color: white;
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.30);
+	margin-top: 30px;
+}
+
+.hero-logo {
+	text-align: center;	
+	padding-top: 50px;
+	-webkit-filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+}
+
+.hero-container {
+	margin: auto;
+	margin-top: 0px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.glyphicon-chevron-down {
+	color: #D9DBED;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	font-size: 25px;
+}
+
+.home-why {
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-top: -20px;
+}
+
+.purple-bg {
+	background-color: #D9DBED;
+}
+
+.home-about {
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	max-width: 900px;
+}
+
+.home-subheader {
+	text-align: center;
+	font-size: 30px;
+	color: #64688F;
+}
+
+
+.home-point {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+.home-icon {
+	width: 150px;
+	display: block;
+	margin: auto;
+}
+
+.home-about p {
+	text-align: center;
+}
+
+
 /***************   NAVIGATION BAR ****************/
 
 .nav {
@@ -89,13 +163,7 @@ header {
 
 
 /***********  CLOSET ITEMS  ***************/
-.row {
-	 -moz-column-width: 18em;
-	 -webkit-column-width: 18em;
-	 -moz-column-gap: 1em;
-	 -webkit-column-gap:1em; 
-  
-}
+
 
 .item {
 	display: inline-block;
@@ -191,6 +259,14 @@ button:hover {
 	background-color: #64688F;
 	color: white;
 	font-weight: bold;
+}
+
+.btn-hero {
+	font-size: 22px;
+	padding: 10px 20px 9px 20px;
+	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.30);
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 

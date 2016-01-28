@@ -21,12 +21,52 @@
 
 </head>
 
-<body id="home-container">
-	<div class="container" >
+<body >
+	
+	<div class="hero">
+ 		<div class="container-fluid hero-container">
+ 			<!-- <h1>Minimize</h1> -->
+ 			<img src="../images/minimize-logo-white.png" class="hero-logo" alt="minimize logo">
+			<h2>Reduce your wardrobe. Simplify your life.</h2>
+			<p><a class="btn btn-primary btn-large btn-hero" href="../development.html">Log In</a></p>
+			<div><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+ 		</div>
+	</div>
 
-	<h1>MINIMIZE</h1>
+	<div class="container-fluid">
+		<div class="home-why">
+			<h3 class="home-subheader">Why Minimize?</h3>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
+					<p class="home-point">More Disposable income</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-time-icon.png" class="home-icon" alt="More free time icon">
+					<p class="home-point">More free time</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-clutter-icon.png" class="home-icon" alt="Less clutter icon">
+					<p class="home-point">Less clutter</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-stress-icon.png" class="home-icon" alt="Less stress icon">
+					<p class="home-point">Less stress</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-</div>
+	<div class="container-fluid purple-bg">
+		<div class="home-about">
+			<h3 class="home-subheader">About Minimize</h3>
+			<p>Minimize is an Internet of Things project by Alyssa DiSalvo, Leila Watson and Rena Yu.</p> 
+			<p>Created as part of the course <i>DECO7000 Designing Connected Realities</i> at the University of Queensland, 2015-16.</p>
+		</div>
+
+	</div>
+
+
 
 	
 </body>
