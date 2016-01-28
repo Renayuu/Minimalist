@@ -112,7 +112,7 @@ function fantastic(item_data) {
 		page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
 
 		// add colour
-		page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
+		page_element += "<p> <span class='item_label'>Color: </span>" + item_data[i].Colour + "</p>";
 
 		//add times worn
 		page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";

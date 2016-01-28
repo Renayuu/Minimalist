@@ -57,6 +57,38 @@
 		</div>
 	</div>
 
+	<div class="container-fluid">
+		<div class="home-why">
+			<!-- <h3 class="home-subheader">Why Minimize?</h3> -->
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
+					<p class="home-point">A Greener Planet (pic: a green globe?)</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-time-icon.png" class="home-icon" alt="More free time icon">
+					<p class="home-point">Wear Your Favorite Clothes Everyday (pic: clothing?)</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-clutter-icon.png" class="home-icon" alt="Less clutter icon">
+					<p class="home-point">Clarity of Mind (pic: someone sleeping soundly?)</p>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-6">
+					<img src="../images/home-stress-icon.png" class="home-icon" alt="Less stress icon">
+					<p class="home-point">Easier Cleaning (pic: an empty laundry basket?)</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="quote" align="center">
+			<p>"Minimalists don&#39;t focus on having less, less, less; rather, we focus on making room for more: more time, more passion, more experiences, more growth, more contribution, and more contentment. More freedom. And clearing the clutter from life&#39;s path helps us make that room. Minimalism is the thing that gets us past the things so we can make room for life&#39;s important things - which aren&#39;t actually things at all."</p> 
+			<p>- Joshua Fields Millburn and Ryan Nicodemus (The Minimalists)</p> 
+		</div>
+
+	</div>
+
 	<div class="container-fluid purple-bg">
 		<div class="home-about">
 			<h3 class="home-subheader">About Minimize</h3>
