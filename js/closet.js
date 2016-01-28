@@ -99,30 +99,50 @@ function fantastic(item_data) {
 
 		page_element += "'>";
 		
+		// add image
 		page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
 
+		// add type
 		page_element += "<p > <span class='item_label'>Type: </span> <span class='item_type'>"+ item_data[i].Type + "</span></p>";
 
+		//add price
 		page_element += "<p> <span class='item_label'>Price: </span>$<span class='item_price'>" + item_data[i].Price + "</span></p>";
 
+		// add cost per wear
 		page_element += "<p> <span class='item_label'>Cost Per Wear: </span>$<span class='item_costpw'>" + (item_data[i].Price / item_data[i].Times_Worn).toFixed(2) + "</span></p>";
 
+		// add colour
 		page_element += "<p> <span class='item_label'>Colour: </span>" + item_data[i].Colour + "</p>";
 
+		//add times worn
 		page_element += "<p><span class='item_label'>Times Worn: </span> <span class='item_timesworn'>" + item_data[i].Times_Worn + "</span></p>";
 
+		// add days ago last worn
 		page_element += "<p> <span class='item_label'>Last Worn: </span> ";
 
 		if (daysago == 1){
-			page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago";
+			page_element += "<span class='item_lastworn'>" + daysago + "</span> day ago</p>";
 		}
 		else if (daysago == 0){
-			page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today";
+			page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today</p>";
 		}
 		else { 
-			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago";
+			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago</p>";
+		}
+
+		// Add Avg temp
+		page_element += "<p> <span class='item_label'>Average Temp: </span> ";
+
+		if (item_data[i].Avg_Temp){
+			page_element += item_data[i].Avg_Temp.toFixed(1) + "&deg;C</p>";
+		}
+
+		else {
+			page_element += "Unknown</p>";
 		}
 		
+
+		// Add Favourite Button
 		if (item_data[i].Favourite == "0")
 		{
 			page_element += "<div class='edit-button-container'><button id='"+item_data[i].Item_ID+"' type='submit' onclick='favouriteItem(id);' value='favourite'><span class='glyphicon glyphicon-star-empty' aria-hidden='true'></span></button>"
@@ -132,8 +152,7 @@ function fantastic(item_data) {
 			page_element += "<div class='edit-button-container'><button id='"+item_data[i].Item_ID+"' type='submit' onclick='unfavouriteItem(id);' value='unfavourite'><span class='glyphicon glyphicon-star' aria-hidden='true'></span></button>"
 		}
 		
-		// page_element += "<button class='edit-button'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button>"
-		
+		// Add Discard button
 		page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='discardItem(id);' value='discard'><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>";
 
 		// insert into webpage into the div with id closet

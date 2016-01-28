@@ -39,19 +39,19 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
-					<p class="home-point">More Disposable income</p>
+					<p class="home-point">More Income</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-time-icon.png" class="home-icon" alt="More free time icon">
-					<p class="home-point">More free time</p>
+					<p class="home-point">More Free Time</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-clutter-icon.png" class="home-icon" alt="Less clutter icon">
-					<p class="home-point">Less clutter</p>
+					<p class="home-point">Less Clutter</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-stress-icon.png" class="home-icon" alt="Less stress icon">
-					<p class="home-point">Less stress</p>
+					<p class="home-point">Less Stress</p>
 				</div>
 			</div>
 		</div>
