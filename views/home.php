@@ -28,7 +28,7 @@
  			<!-- <h1>Minimize</h1> -->
  			<img src="../images/minimize-logo-white.png" class="hero-logo" alt="minimize logo">
 			<h2>Reduce your wardrobe. Simplify your life.</h2>
-			<p><a class="btn btn-primary btn-large btn-hero" href="../development.html">Log In</a></p>
+			<p><a class="btn btn-default btn-large btn-hero" href="../development.html">Log In</a></p>
 			<div><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
  		</div>
 	</div>

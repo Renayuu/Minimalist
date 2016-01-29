@@ -118,3 +118,22 @@ function fantastic(item_data) {
     };
 
 };
+
+
+function editStory(someid)  {
+        $.ajax({
+            type: "POST",
+            url: "../lib/edit_story.php",
+            data: {
+                "itemID":someid
+                // "story": what_user_types_in_modal
+            },
+            success: function(msg) {
+                console.log(msg);
+                window.location.reload();
+            }, 
+            error: function (err){
+                console.log("error:"+err)
+            }
+        });
+    };

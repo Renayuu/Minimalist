@@ -35,7 +35,7 @@
 
 	<br> 
 
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
+	<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
 		  Edit Your Goal
 	</button>
 
@@ -61,7 +61,7 @@
 			        <label for="goal">I want to own  </label> <input type="text" size="3" name="Goal_Num" id="Goal_Num"> <label for="goal">  or less items.</label>
 		        </p>
 
-		        <input type="submit" id="editGoalSubmit" class="btn btn-primary" value="Submit" data-dismiss="modal">
+		        <input type="submit" id="editGoalSubmit" class="btn btn-default" value="Submit" data-dismiss="modal">
 	            <!--go to an ajax function that updates the last two numbers-->
 	        
 	      </div>
