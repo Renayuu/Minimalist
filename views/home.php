@@ -62,19 +62,19 @@
 			<!-- <h3 class="home-subheader">Why Minimize?</h3> -->
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
+					<img src="../images/home-planet-icon.png" class="home-icon" alt="more disposable income icon">
 					<p class="home-point">A Greener Planet (pic: a green globe?)</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-time-icon.png" class="home-icon" alt="More free time icon">
+					<img src="../images/home-clothes-icon.png" class="home-icon" alt="More free time icon">
 					<p class="home-point">Wear Your Favorite Clothes Everyday (pic: clothing?)</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-clutter-icon.png" class="home-icon" alt="Less clutter icon">
+					<img src="../images/home-mind-icon.png" class="home-icon" alt="Less clutter icon">
 					<p class="home-point">Clarity of Mind (pic: someone sleeping soundly?)</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-stress-icon.png" class="home-icon" alt="Less stress icon">
+					<img src="../images/home-clean-icon.png" class="home-icon" alt="Less stress icon">
 					<p class="home-point">Easier Cleaning (pic: an empty laundry basket?)</p>
 				</div>
 			</div>
