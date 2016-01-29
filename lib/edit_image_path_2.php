@@ -9,14 +9,11 @@ if($conn === false){
  
 // Escape user inputs for security
 $itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
-$story = mysqli_real_escape_string($conn, $_POST['story']);
+$photo = mysqli_real_escape_string($conn, $_POST['photo']);
 
-// $itemid = ($_POST['itemID']);
-// $story = ($_POST['story']);
 
-$sql = "UPDATE Item SET Story = '".$story."' WHERE Item_ID = '".$itemid."'";
-echo $itemid;
-echo $story;
+$sql = "UPDATE Item SET Image_Path_2 = '".$photo."' WHERE Item_ID = '".$itemid."'";
+
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";

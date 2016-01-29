@@ -20,7 +20,30 @@ jQuery(document).ready(function($){
             console.log("error:"+err)
         }
     });	
-    
+
+var item_id;
+var story_id;  
+var image_path_2;
+
+$(document).on('click', '.story', function() {
+    $('#editStoryModal').modal('show');
+    item_id = $(this).attr("data-id");
+    console.log("modal should close");
+});
+$('#modalCloseStory').click(function() {
+    story_text = $("#story").val();
+    console.log(story_text);
+    editStory(item_id, story_text);
+});
+$(document).on('click', '.photo', function(){
+    $('#uploadPhotoModal').modal('show');
+    item_id = $(this).attr("data-id");
+});
+$('#modalClosePhoto').click(function() {
+    image_path_2 = $("#photo").val();
+    uploadPhoto(item_id, image_path_2);
+});
+
 });
 
 function fantastic(item_data) {
@@ -107,9 +130,9 @@ function fantastic(item_data) {
 
         page_element += "<div class='edit-button-container edit-button-2'>";
 
-        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='addPhoto(id);' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
+        page_element += "<button class = 'photo' data-id='"+item_data[i].Item_ID+"' type='button' value='photo'><span class='glyphicon glyphicon-picture' aria-hidden='true'></span></button>"; 
 
-        page_element += "<button id='"+item_data[i].Item_ID+"' type='submit' onclick='editStory(id);' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button></div>"; 
+        page_element += "<button class = 'story' data-id='"+item_data[i].Item_ID+"' type='button' value='story'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></button></div>"; 
        
         // insert into webpage into the div with id closet
         var html = $.parseHTML(page_element);
@@ -120,13 +143,31 @@ function fantastic(item_data) {
 };
 
 
-function editStory(someid)  {
+function editStory(item_id, story_text)  {
         $.ajax({
             type: "POST",
             url: "../lib/edit_story.php",
             data: {
-                "itemID":someid
-                // "story": what_user_types_in_modal
+                "itemID":item_id,
+                "story":story_text
+            },
+            success: function(msg) {
+                console.log(msg);
+                window.location.reload();
+            }, 
+            error: function (err){
+                console.log("error:"+err)
+            }
+        });
+    };
+
+function uploadPhoto(item_id, image_path_2)  {
+        $.ajax({
+            type: "POST",
+            url: "../lib/edit_image_path_2.php",
+            data: {
+                "itemID":item_id,
+                "photo":image_path_2
             },
             success: function(msg) {
                 console.log(msg);

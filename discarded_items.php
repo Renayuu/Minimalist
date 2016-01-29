@@ -32,3 +32,64 @@
 		<div id="discarded"></div>
 	</div>
 </div>
+
+<!-- Modal for Story -->
+	<div class="modal fade" id="editStoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">EDIT STORY</h4>
+	      </div>
+	      <form name="editstory" enctype="multipart/form-data" id="editStoryForm">
+	      <div class="modal-body">
+	        
+		        <p>
+			        <textarea rows="5" cols="50" name="story" id="story"></textarea>
+		        </p>
+
+		        <!-- <input type="submit" id="editStorySubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->
+	            <!--go to an ajax function that updates the last two numbers-->
+	        
+	      </div>
+	      
+	      <div class="modal-footer">
+	      	<button type="button" class="btn btn-default" id="modalCloseStory">Add Story</button>
+	      </div>
+			</form>
+
+	    </div> <!-- end modalContent -->
+	  </div> <!-- end modalDialog -->
+	</div> <!-- end my modal -->
+
+
+<!-- Modal for Images -->
+	<div class="modal fade" id="uploadPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">ADD A PHOTO</h4>
+	      </div>
+	      <div class="modal-body">
+	      <form name="addaphoto" enctype="multipart/form-data" id="uploadPhotoForm">
+	        
+		        <p>
+			        <label for="instructions">Note that you can only upload one photo per item (apart from the item photo). Uploading an additional photo will override the first photo you have uploaded.</label> 
+			        <input type="text" name="photo" id="photo">
+		        </p>
+
+		        <!-- <input type="submit" id="uploadPhotoSubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->
+	            <!--go to an ajax function that updates the last two numbers-->
+	       
+	      </div>
+	      <div class="modal-footer">
+	      	<button type="button" class="btn btn-default" id="modalClosePhoto">Add Photo</button>
+	      </div>
+	      </form> 
+
+	    </div> <!-- end modalContent -->
+	  </div> <!-- end modalDialog -->
+	</div> <!-- end my modal -->
