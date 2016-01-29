@@ -1,4 +1,5 @@
 <?php include ("views/navbar.php"); ?>
+<script type="text/javascript" src = "js/stories.js"></script>
 <head>
 	<title>Minimize: Discarded Items</title>
 
@@ -40,13 +41,14 @@
 
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">EDIT STORY</h4>
+	        <h4 class="modal-title" id="myModalLabel">ADD A STORY</h4>
 	      </div>
 	      <form name="editstory" enctype="multipart/form-data" id="editStoryForm">
 	      <div class="modal-body">
 	        
 		        <p>
-			        <textarea rows="5" cols="50" name="story" id="story"></textarea>
+		        	<!-- <label for="instructions">Note that adding a new story will override the story currently displayed.</label> -->
+			        <textarea rows="5" cols="50" name="story" id="story"><?php echo $thisitemStory; ?></textarea>
 		        </p>
 
 		        <!-- <input type="submit" id="editStorySubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->
@@ -78,7 +80,8 @@
 	        
 		        <p>
 			        <label for="instructions">Note that you can only upload one photo per item (apart from the item photo). Uploading an additional photo will override the first photo you have uploaded.</label> 
-			        <input type="text" name="photo" id="photo">
+			        <label for="uploadphoto">Upload Photo:</label>
+	                <input name="photo" type="file">
 		        </p>
 
 		        <!-- <input type="submit" id="uploadPhotoSubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->

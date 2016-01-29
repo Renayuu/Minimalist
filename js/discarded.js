@@ -164,7 +164,7 @@ function editStory(item_id, story_text)  {
 function uploadPhoto(item_id, image_path_2)  {
         $.ajax({
             type: "POST",
-            url: "../lib/edit_image_path_2.php",
+            url: "../insert_memory_photo.php",
             data: {
                 "itemID":item_id,
                 "photo":image_path_2
