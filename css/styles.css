@@ -115,13 +115,18 @@ header {
 .home-point {
 	text-align: center;
 	margin-top: 5px;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .home-icon {
 	width: 100px;
 	display: block;
 	margin: auto;
+}
+
+.home-quote p {
+	text-align: center;
+	margin-top: 5px;
 }
 
 @media (max-width: 600px) {
