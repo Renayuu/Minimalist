@@ -29,7 +29,7 @@ $file_name=$_FILES["uploadphoto"]["name"];
 $temp_name=$_FILES["uploadphoto"]["tmp_name"];
 $imgtype=$_FILES["uploadphoto"]["type"];
 $ext= GetImageExtension($imgtype);
-$imagename=date("Y-m-d")."-".time().$ext;
+$imagename=date("Y-m-d")."-".time();
 $target_path = "uploadmemory/".$imagename.".jpg";
     
 move_uploaded_file($temp_name, $target_path);

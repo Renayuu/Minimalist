@@ -126,7 +126,11 @@ function fantastic(item_data) {
         
         page_element += "<p>" + "<img src=" + item_data[i].Image_Path + ">" + "</p>";
 
-        
+
+        if (item_data[i].Image_Path_2 != "") {
+            page_element += "<p>" + "<img src=" + item_data[i].Image_Path_2 + ">" + "</p>";
+        }
+
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
 
         page_element += "<div class='edit-button-container edit-button-2'>";
