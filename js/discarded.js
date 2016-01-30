@@ -41,8 +41,8 @@ $(document).on('click', '.photo', function(){
     item_id = $(this).attr("data-id");
 });
 $('#modalClosePhoto').click(function() {
-    image_path_2 = $("#photo").val();
-    uploadPhoto(item_id, image_path_2);
+    //image_path_2 = $("#uploadphoto").val();
+    uploadPhoto(item_id);
 });
 
 });
@@ -180,13 +180,13 @@ function transferID(item_id)  {
         });
     };
 
-function uploadPhoto(item_id, image_path_2)  {
+function uploadPhoto(item_id)  {
         $.ajax({
             type: "POST",
             url: "../insert_memory_photo.php",
             data: {
-                "itemID":item_id,
-                "photo":image_path_2
+                "itemID":item_id
+                //"photo":image_path_2
             },
             success: function(msg) {
                 console.log(msg);

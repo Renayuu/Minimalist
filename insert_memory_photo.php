@@ -9,7 +9,7 @@ if($conn === false){
 }
 
 $itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
-//$photo = mysqli_real_escape_string($conn, $_POST['photo']);
+//$uploadphoto = mysqli_real_escape_string($conn, $_POST['uploadphoto']);
 
 function GetImageExtension($imagetype)
 {
@@ -27,15 +27,16 @@ function GetImageExtension($imagetype)
 
 if (!empty($_FILES["uploadphoto"]["name"])) {
 
-	$file_name=$_FILES["uploadphoto"]["name"];
-	$temp_name=$_FILES["uploadphoto"]["tmp_name"];
-	$imgtype=$_FILES["uploadphoto"]["type"];
-	$ext= GetImageExtension($imgtype);
+	$file_name2=$_FILES["uploadphoto"]["name"];
+	$temp_name2=$_FILES["uploadphoto"]["tmp_name"];
+	$imgtype2=$_FILES["uploadphoto"]["type"];
+	$ext= GetImageExtension($imgtype2);
 	$imagename2=date("Y-m-d")."-".time().$ext;
 	$target_path2 = "uploadmemory/".$imagename2;
 
     
 move_uploaded_file($temp_name2, $target_path2);
+echo $target_path2;
 
 }
 

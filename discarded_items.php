@@ -83,7 +83,7 @@
 		        <p>
 			        <label for="instructions">Note that you can only upload one photo per item (apart from the item photo). Uploading an additional photo will override the first photo you have uploaded.</label> 
 			        <label for="uploadphoto">Upload Photo:</label>
-	                <input name="photo" type="file">
+	                <input name="uploadphoto" type="file">
 		        </p>
 
 		        <!-- <input type="submit" id="uploadPhotoSubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->
