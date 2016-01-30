@@ -24,18 +24,18 @@ $itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
 //    }
 
 //  }
-$time1 = time();
+$newname = date('Y').date('m').date('d').date('h').date('i');
 $file_name=$_FILES["uploadphoto"]["name"];
 $temp_name=$_FILES["uploadphoto"]["tmp_name"];
 // $imgtype=$_FILES["uploadphoto"]["type"];
 // $ext= GetImageExtension($imgtype);
 $imagename=$itemid;
-$target_path = "uploadmemory/".$imagename.".jpg";
+$target_path = "uploadmemory/".$newname.".jpg";
 
-if(file_exists('$target_path')) {
-    chmod('$target_path',0755); //Change the file permissions if allowed
-    unlink('$target_path'); //remove the file
-}
+// if(file_exists('$target_path')) {
+//     chmod('$target_path',0755); //Change the file permissions if allowed
+//     unlink('$target_path'); //remove the file
+// }
 
  //echo $file_name;
 
