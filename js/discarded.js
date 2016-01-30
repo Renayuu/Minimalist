@@ -194,7 +194,7 @@ function uploadPhoto(item_id)  {
             },
             success: function(msg) {
                 //console.log(msg);
-                //window.location.reload();
+                window.location.reload();
             }, 
             error: function (err){
                 console.log("error:"+err)
