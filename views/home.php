@@ -93,8 +93,8 @@
 	<div class="container-fluid purple-bg">
 		<div class="home-about">
 			<h3 class="home-subheader">About Minimize</h3>
-			<p>Minimize is an Internet of Things project by Alyssa DiSalvo, Leila Watson and Rena Yu.</p> 
-			<p>Created as part of the course <i>DECO7000 Designing Connected Realities</i> at the University of Queensland, 2015-16.</p>
+			<p>Minimize is an Internet of Things project by Alyssa DiSalvo, Leila Watson, and Rena Yu.</p> 
+			<p>Created as part of the course DECO7000 Designing Connected Realities at the University of Queensland, 2015-16.</p>
 		</div>
 
 	</div>

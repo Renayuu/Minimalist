@@ -26,14 +26,16 @@ var story_id;
 var image_path_2;
 
 $(document).on('click', '.story', function() {
-    item_id = $(this).attr("data-id");
+    //$('#editStoryModal').modal('show');
+    item_id = $(this).attr("data-id"); 
+    console.log(item_id);
     transferID(item_id);
     $('#editStoryModal').modal('show');
     //console.log("modal should close");
 });
 $('#modalCloseStory').click(function() {
     story_text = $("#story").val();
-    console.log(story_text);
+    //console.log(story_text);
     editStory(item_id, story_text);
 });
 $(document).on('click', '.photo', function(){
@@ -132,7 +134,9 @@ function fantastic(item_data) {
             page_element += "<p>" + "<img src=" + item_data[i].Image_Path_2 + ">" + "</p>";
         }
 
+        if (item_data[i].Story != "") {
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
+        }
 
         page_element += "<div class='edit-button-container edit-button-2'>";
 
@@ -147,6 +151,24 @@ function fantastic(item_data) {
     };
 
 };
+
+function transferID(item_id) {
+        $.ajax({
+            type: "POST",
+            url: "../get_story.php",
+            data: {
+                "ItemID":item_id
+            },
+            success: function(data) {
+                console.log(data);
+                console.log("itemID should transfer");
+                //window.location.reload();
+            }, 
+            error: function (err){
+                console.log("error:"+err)
+            }
+        });
+    };
 
 
 function editStory(item_id, story_text)  {
@@ -167,23 +189,6 @@ function editStory(item_id, story_text)  {
         });
     };
 
-function transferID(item_id)  {
-        $.ajax({
-            type: "POST",
-            url: "../get_story.php",
-            data: {
-                "itemID":item_id
-            },
-            success: function(msg) {
-                console.log(msg);
-                console.log("itemID should transfer");
-                //window.location.reload();
-            }, 
-            error: function (err){
-                console.log("error:"+err)
-            }
-        });
-    };
 
 function uploadPhoto(item_id)  {
         $.ajax({

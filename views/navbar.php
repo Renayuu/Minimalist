@@ -29,7 +29,7 @@
 
 <header>	
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<a class="navbar-brand" href="#"><img id="logo" alt="Minimize logo" src="images/minimize.png"></a>
+		<a class="navbar-brand" href="development.html"><img id="logo" alt="Minimize logo" src="images/minimize.png"></a>
 
 		<ul class="nav nav-pills pull-right">
 			<li role="presentation"><a href="http://s4325075-minimalist.uqcloud.net">Home</a></li>

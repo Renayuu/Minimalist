@@ -7,8 +7,9 @@ if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 };
 
-$itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
-echo $itemid;
+//echo (mysqli_real_escape_string($conn, $_POST['ItemID']));
+$itemid = mysqli_real_escape_string($conn, $_POST['ItemID']);
+//echo $itemid;
 
 $sql = "SELECT Story FROM Item WHERE Item_ID = '".$itemid."'";
 
