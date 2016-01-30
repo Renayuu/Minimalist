@@ -21,7 +21,7 @@
 	<script src="js/isotope.pkgd.min.js"></script>
 
 	<!-- Developer Javascript -->
-	<script src="js/discarded.js"></script>
+	<script src="js/discarded_pete.js"></script>
 
 
 	<!-- Custom Styles -->
@@ -100,25 +100,5 @@
 	</div> <!-- end my modal -->
 
 
-
-	<script type="text/javascript">
 	  
-	$("#uploadPhotoModal").on('hide', function() {
-        //window.location.reload();
-	});
-
-	// submits modal form - fixes form submission problem, tutorial from:
-	//http://stackoverflow.com/questions/9349142/twitter-bootstrap-2-modal-form-dialogs/9349329#9349329
-	$('#modalClosePhoto').click(function(e){
-	    // We don't want this to act as a link so cancel the link action
-	    e.preventDefault();
-	    console.log("hello");
-
-	    // Find form and submit it
-	    $('#uploadPhotoForm').submit(function (){
-	    	success: {
-	    		//window.location.reload();
-	    	}
-	    });
-	    
-	});
+	

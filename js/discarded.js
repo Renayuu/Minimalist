@@ -1,6 +1,14 @@
 jQuery(document).ready(function($){
-	var item_data = [];
+
+    console.log("Pete's version of discarded");
     
+    //globals
+    var item_data = [];
+    var item_id;
+    var story_id;  
+    var image_path_2;
+    
+    // get data for initial page load
     $.ajax({
         type: "GET",
         url: "../lib/get_discarded_items.php",
@@ -19,34 +27,51 @@ jQuery(document).ready(function($){
         error: function (err){
             console.log("error:"+err)
         }
-    });	
+    }); 
 
-var item_id;
-var story_id;  
-var image_path_2;
+    // functions for stories
+    
+    $(document).on('click', '.story', function() {
+        //$('#editStoryModal').modal('show');
+        item_id = $(this).attr("data-id"); 
+        console.log(item_id);
+        transferID(item_id);
+        $('#editStoryModal').modal('show');
+        //console.log("modal should close");
+    });
+    
+    $('#modalCloseStory').click(function() {
+        story_text = $("#story").val();
+        //console.log(story_text);
+        editStory(item_id, story_text);
+    });
+    
+    // functions for photos
+    
+    $(document).on('click', '.photo', function(){
+        $('#uploadPhotoModal').modal('show');
+        item_id = $(this).attr("data-id");
+        uploadPhoto(item_id);
+    });
+    
+    $("#uploadPhotoModal").on('hide', function() {
+        //window.location.reload();
+    });
 
-$(document).on('click', '.story', function() {
-    //$('#editStoryModal').modal('show');
-    item_id = $(this).attr("data-id"); 
-    console.log(item_id);
-    transferID(item_id);
-    $('#editStoryModal').modal('show');
-    //console.log("modal should close");
-});
-$('#modalCloseStory').click(function() {
-    story_text = $("#story").val();
-    //console.log(story_text);
-    editStory(item_id, story_text);
-});
-$(document).on('click', '.photo', function(){
-    $('#uploadPhotoModal').modal('show');
-    item_id = $(this).attr("data-id");
-    uploadPhoto(item_id);
-});
-// $('#modalClosePhoto').click(function() {
-//     //image_path_2 = $("#uploadphoto").val();
-//     uploadPhoto(item_id);
-// });
+    // submits modal form - fixes form submission problem, tutorial from:
+    //http://stackoverflow.com/questions/9349142/twitter-bootstrap-2-modal-form-dialogs/9349329#9349329
+    
+    $('#modalClosePhoto').click(function(e){
+        // We don't want this to act as a link so cancel the link action
+        e.preventDefault();
+        console.log("hello");
+
+        // Find form and submit it
+        $('#uploadPhotoForm').submit();
+        
+    });
+    
+    
 
 });
 
@@ -151,6 +176,17 @@ function fantastic(item_data) {
     };
 
 };
+
+//http://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+// <a class="left carousel-control" href="#carousel-memories" role="button" data-slide="prev">
+//     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+//     <span class="sr-only">Previous</span>
+//   </a>
+//   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+//     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+//     <span class="sr-only">Next</span>
+//   </a>
+// </div>
 
 function transferID(item_id) {
         $.ajax({

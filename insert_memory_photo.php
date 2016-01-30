@@ -59,3 +59,7 @@ if(mysqli_query($conn, $sql)){
 // close connection
 mysqli_close($conn);
 ?>
+
+<script type='text/javascript'>
+	window.location.href = "discarded_items.php";
+</script>
