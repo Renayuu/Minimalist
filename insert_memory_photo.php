@@ -27,13 +27,8 @@ $itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
 
 $file_name=$_FILES["uploadphoto"]["name"];
 $temp_name=$_FILES["uploadphoto"]["tmp_name"];
-<<<<<<< Updated upstream
-$imgtype=$_FILES["uploadphoto"]["type"];
-$ext= GetImageExtension($imgtype);
-=======
 // $imgtype=$_FILES["uploadphoto"]["type"];
 // $ext= GetImageExtension($imgtype);
->>>>>>> Stashed changes
 $imagename=date("Y-m-d")."-".time();
 $target_path = "uploadmemory/".$imagename.".jpg";
     
