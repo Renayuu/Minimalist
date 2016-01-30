@@ -36,6 +36,7 @@ $target_path = "uploadmemory/".$imagename.".jpg";
 
 if (move_uploaded_file($_FILES["uploadphoto"]["tmp_name"], $target_path)) {
   echo "File uploaded.";
+  echo $itemid;
 }
 else {
   echo "failed";

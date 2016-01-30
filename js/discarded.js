@@ -39,6 +39,7 @@ $('#modalCloseStory').click(function() {
 $(document).on('click', '.photo', function(){
     $('#uploadPhotoModal').modal('show');
     item_id = $(this).attr("data-id");
+    uploadPhoto(item_id);
 });
 // $('#modalClosePhoto').click(function() {
 //     //image_path_2 = $("#uploadphoto").val();
@@ -194,7 +195,7 @@ function uploadPhoto(item_id)  {
             },
             success: function(msg) {
                 //console.log(msg);
-                window.location.reload();
+                //window.location.reload();
             }, 
             error: function (err){
                 console.log("error:"+err)
