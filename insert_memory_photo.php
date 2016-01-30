@@ -24,13 +24,18 @@ $itemid = mysqli_real_escape_string($conn, $_POST['itemID']);
 //    }
 
 //  }
-
+$time1 = time();
 $file_name=$_FILES["uploadphoto"]["name"];
 $temp_name=$_FILES["uploadphoto"]["tmp_name"];
 // $imgtype=$_FILES["uploadphoto"]["type"];
 // $ext= GetImageExtension($imgtype);
-$imagename=date("Y-m-d")."-".time();
+$imagename=$itemid;
 $target_path = "uploadmemory/".$imagename.".jpg";
+
+if(file_exists('$target_path')) {
+    chmod('$target_path',0755); //Change the file permissions if allowed
+    unlink('$target_path'); //remove the file
+}
 
  //echo $file_name;
 
