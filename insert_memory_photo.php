@@ -27,21 +27,20 @@ function GetImageExtension($imagetype)
 
 if (!empty($_FILES["uploadphoto"]["name"])) {
 
-	$file_name2=$_FILES["uploadphoto"]["name"];
-	$temp_name2=$_FILES["uploadphoto"]["tmp_name"];
-	$imgtype2=$_FILES["uploadphoto"]["type"];
-	$ext= GetImageExtension($imgtype2);
-	$imagename2=date("Y-m-d")."-".time().$ext;
-	$target_path2 = "uploadmemory/".$imagename2;
+  $file_name=$_FILES["uploadphoto"]["name"];
+  $temp_name=$_FILES["uploadphoto"]["tmp_name"];
+  $imgtype=$_FILES["uploadphoto"]["type"];
+  $ext= GetImageExtension($imgtype);
+  $imagename=date("Y-m-d")."-".time().$ext;
+  $target_path = "uploadmemory/".$imagename;
 
     
-move_uploaded_file($temp_name2, $target_path2);
-echo $target_path2;
+move_uploaded_file($temp_name, $target_path);
 
 }
 
 // attempt insert query execution
-$sql = "UPDATE Item SET Image_Path_2 = '".$target_path2."' WHERE Item_ID = '".$itemid."'";
+$sql = "UPDATE Item SET Image_Path_2 = '".$target_path."' WHERE Item_ID = '".$itemid."'";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";

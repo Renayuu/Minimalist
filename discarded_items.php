@@ -78,7 +78,7 @@
 	        <h4 class="modal-title" id="myModalLabel">ADD A PHOTO</h4>
 	      </div>
 	      <div class="modal-body">
-	      <form name="addaphoto" enctype="multipart/form-data" id="uploadPhotoForm">
+	      <form action="insert_memory_photo.php" method="post" name="addaphoto" enctype="multipart/form-data" id="uploadPhotoForm">
 	        
 		        <p>
 			        <label for="instructions">Note that you can only upload one photo per item (apart from the item photo). Uploading an additional photo will override the first photo you have uploaded.</label> 
@@ -98,3 +98,21 @@
 	    </div> <!-- end modalContent -->
 	  </div> <!-- end modalDialog -->
 	</div> <!-- end my modal -->
+
+
+
+	<script type="text/javascript">
+	  
+	$("#uploadPhotoModal").on('hide', function() {
+        window.location.reload();
+	});
+
+	// submits modal form - fixes form submission problem, tutorial from:
+	//http://stackoverflow.com/questions/9349142/twitter-bootstrap-2-modal-form-dialogs/9349329#9349329
+	$('#modalClosePhoto').on('click', function(e){
+	    // We don't want this to act as a link so cancel the link action
+	    e.preventDefault();
+
+	    // Find form and submit it
+	    $('#uploadPhotoForm').submit();
+	});

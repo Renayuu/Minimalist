@@ -189,8 +189,8 @@ function uploadPhoto(item_id)  {
                 //"photo":image_path_2
             },
             success: function(msg) {
-                console.log(msg);
-                window.location.reload();
+                //console.log(msg);
+                //window.location.reload();
             }, 
             error: function (err){
                 console.log("error:"+err)
