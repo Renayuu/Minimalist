@@ -15,8 +15,8 @@ $story = mysqli_real_escape_string($conn, $_POST['story']);
 // $story = ($_POST['story']);
 
 $sql = "UPDATE Item SET Story = '".$story."' WHERE Item_ID = '".$itemid."'";
-echo $itemid;
-echo $story;
+//echo $itemid;
+//echo $story;
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";

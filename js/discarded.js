@@ -26,9 +26,10 @@ var story_id;
 var image_path_2;
 
 $(document).on('click', '.story', function() {
-    $('#editStoryModal').modal('show');
     item_id = $(this).attr("data-id");
-    console.log("modal should close");
+    transferID(item_id);
+    $('#editStoryModal').modal('show');
+    //console.log("modal should close");
 });
 $('#modalCloseStory').click(function() {
     story_text = $("#story").val();
@@ -152,8 +153,26 @@ function editStory(item_id, story_text)  {
                 "story":story_text
             },
             success: function(msg) {
-                console.log(msg);
+                //console.log(msg);
                 window.location.reload();
+            }, 
+            error: function (err){
+                console.log("error:"+err)
+            }
+        });
+    };
+
+function transferID(item_id)  {
+        $.ajax({
+            type: "POST",
+            url: "../get_story.php",
+            data: {
+                "itemID":item_id
+            },
+            success: function(msg) {
+                console.log(msg);
+                console.log("itemID should transfer");
+                //window.location.reload();
             }, 
             error: function (err){
                 console.log("error:"+err)

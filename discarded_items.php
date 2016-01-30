@@ -1,5 +1,7 @@
 <?php include ("views/navbar.php"); ?>
 <script type="text/javascript" src = "js/stories.js"></script>
+
+
 <head>
 	<title>Minimize: Discarded Items</title>
 
@@ -48,7 +50,7 @@
 	        
 		        <p>
 		        	<!-- <label for="instructions">Note that adding a new story will override the story currently displayed.</label> -->
-			        <textarea rows="5" cols="50" name="story" id="story"><?php echo $thisitemStory; ?></textarea>
+			        <textarea rows="5" cols="50" name="story" id="story"></textarea>
 		        </p>
 
 		        <!-- <input type="submit" id="editStorySubmit" class="btn btn-default" value="Submit" data-dismiss="modal"> -->

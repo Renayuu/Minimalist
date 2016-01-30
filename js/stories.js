@@ -8,7 +8,7 @@ $('document').ready(function()
 		success: function(data){
 			console.log(data);
 			itemStory = data;
-			$('#thisItemStory').text(itemStory);
+			$('#story').val(itemStory);
 			console.log(itemStory);
 		},
 		error: function(err){
