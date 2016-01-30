@@ -163,6 +163,9 @@ function transferID(item_id) {
                 console.log(data);
                 console.log("itemID should transfer");
                 //window.location.reload();
+                var existingStory = data;
+                console.log(existingStory.length);
+                $('#story').val(existingStory);
             }, 
             error: function (err){
                 console.log("error:"+err)
