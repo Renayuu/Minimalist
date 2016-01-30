@@ -14,7 +14,7 @@ $type = mysqli_real_escape_string($conn, $_POST['Type']);
 $price = mysqli_real_escape_string($conn, $_POST['Price']);
 $colour = mysqli_real_escape_string($conn, $_POST['Colour']);
 $material = mysqli_real_escape_string($conn, $_POST['Material']);
-$description = mysqli_real_escape_string($conn, $_POST['Description']);
+// $description = mysqli_real_escape_string($conn, $_POST['Description']);
 $avg_temp = 0;
 //$date = date("Y-m-d");
 
@@ -47,7 +47,7 @@ move_uploaded_file($temp_name, $target_path);
 }
 
 // attempt insert query execution
-$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`,`Description`, `Image_Path`,  `Avg_Temp`) VALUES ('$type', '$price', '$colour','$material','$description','$target_path','$avg_temp')";
+$sql = "INSERT INTO `Item` (`Type`, `Price`, `Colour`,`Material`, `Image_Path`,  `Avg_Temp`) VALUES ('$type', '$price', '$colour','$material','$target_path','$avg_temp')";
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";

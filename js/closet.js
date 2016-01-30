@@ -126,9 +126,15 @@ function fantastic(item_data) {
 		else if (daysago == 0){
 			page_element += "<span class='item_lastworn' style='visibility: hidden;'>0</span>Today</p>";
 		}
-		else { 
+
+		else if (daysago > 1){ 
 			page_element += "<span class='item_lastworn'>" + daysago + "</span> days ago</p>";
 		}
+
+		else { 
+			page_element += "<span class='item_lastworn'> Never </span></p>";
+		}
+
 
 		// Add Avg temp
 		page_element += "<p> <span class='item_label'>Average Temp: </span> ";
