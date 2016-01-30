@@ -91,7 +91,7 @@
 	       
 	      </div>
 	      <div class="modal-footer">
-	      	<button type="button" class="btn btn-default" id="modalClosePhoto">Add Photo</button>
+	      	<button type="submit" class="btn btn-default" id="modalClosePhoto">Add Photo</button>
 	      </div>
 	      </form> 
 
@@ -104,15 +104,21 @@
 	<script type="text/javascript">
 	  
 	$("#uploadPhotoModal").on('hide', function() {
-        window.location.reload();
+        //window.location.reload();
 	});
 
 	// submits modal form - fixes form submission problem, tutorial from:
 	//http://stackoverflow.com/questions/9349142/twitter-bootstrap-2-modal-form-dialogs/9349329#9349329
-	$('#modalClosePhoto').on('click', function(e){
+	$('#modalClosePhoto').click(function(e){
 	    // We don't want this to act as a link so cancel the link action
 	    e.preventDefault();
+	    console.log("hello");
 
 	    // Find form and submit it
-	    $('#uploadPhotoForm').submit();
+	    $('#uploadPhotoForm').submit(function (){
+	    	success: {
+	    		//window.location.reload();
+	    	}
+	    });
+	    
 	});

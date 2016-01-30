@@ -40,10 +40,10 @@ $(document).on('click', '.photo', function(){
     $('#uploadPhotoModal').modal('show');
     item_id = $(this).attr("data-id");
 });
-$('#modalClosePhoto').click(function() {
-    //image_path_2 = $("#uploadphoto").val();
-    uploadPhoto(item_id);
-});
+// $('#modalClosePhoto').click(function() {
+//     //image_path_2 = $("#uploadphoto").val();
+//     uploadPhoto(item_id);
+// });
 
 });
 

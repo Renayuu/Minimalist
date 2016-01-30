@@ -31,14 +31,21 @@ $temp_name=$_FILES["uploadphoto"]["tmp_name"];
 // $ext= GetImageExtension($imgtype);
 $imagename=date("Y-m-d")."-".time();
 $target_path = "uploadmemory/".$imagename.".jpg";
-    
-move_uploaded_file($temp_name, $target_path);
+
+ //echo $file_name;
+
+if (move_uploaded_file($_FILES["uploadphoto"]["tmp_name"], $target_path)) {
+  echo "File uploaded.";
+}
+else {
+  echo "failed";
+}
 
 // attempt insert query execution
 $sql = "UPDATE Item SET Image_Path_2 = '$target_path' WHERE Item_ID = '".$itemid."'";
 
 if(mysqli_query($conn, $sql)){
-    echo "Records added successfully.";
+    //echo "Records added successfully.";
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
@@ -46,11 +53,3 @@ if(mysqli_query($conn, $sql)){
 // close connection
 mysqli_close($conn);
 ?>
-
-<div>
-    
-<form action="http://s4325075-minimalist.uqcloud.net/discarded_items.php">
-    <input type="submit" value="Go Back">
-</form>
-    
-</div>
