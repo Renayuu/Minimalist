@@ -368,3 +368,38 @@ button:hover {
 }
 
 
+
+/*********** UNUSED CAROUSEL ***********/
+.unused-container {
+	margin: auto;
+}
+
+.unused-h1 {
+	margin-top: 10px;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+}
+
+.unused-h1 h1 {
+	text-align: center;
+	font-size: 40px;
+	text-transform: none;
+	letter-spacing: 1px;
+	color: white; 
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.30);
+}
+
+.carousel-caption {
+	top: 80px;
+	z-index: 99;
+}
+
+.btn-discard {
+	margin-top: 300px;
+	font-size: 30px;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+

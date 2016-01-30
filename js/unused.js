@@ -24,16 +24,21 @@ function get_used(item_data) {
 		var page_element = "";	
 
 		var date1 = new Date();
-    var date2 = item_data[i].Date_Last_Worn;
-    date2 = new Date(date2);
-    var daysago = Math.round((date1 - date2) / (1000 * 3600 * 24));
+        var date2 = item_data[i].Date_Last_Worn;
+        date2 = new Date(date2);
+        var daysago = Math.round((date1 - date2) / (1000 * 3600 * 24));
 
 		if (daysago >= 100) {
-			page_element += "<div class='item'> <img src="+ item_data[i].Image_Path + "> </div>";
+			page_element += "<div class='item'> <img src="+ item_data[i].Image_Path + "> ";
+            page_element += "<div class='carousel-caption'><h3> You haven't worn me in ";
+            page_element += daysago;
+            page_element += " days </h3><button class='btn btn-default btn-discard' type='submit'>Discard</button></div></div>";
 
 			var html = $.parseHTML(page_element);
 			$('#unused-images').append(html);
-		}		
+		}
+
+
 	};
 
 	$('.item').first().addClass("active");
