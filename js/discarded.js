@@ -69,7 +69,7 @@ jQuery(document).ready(function($){
         $('#uploadPhotoForm').submit();
         
     });
-    
+
     
 
 });
@@ -151,15 +151,16 @@ function fantastic(item_data) {
 
         page_element += "'>";
         
-        page_element += "<p><div id='carousel-memories-"+item_data[i].Item_ID+"' class='carousel slide'><div class='carousel-inner' id='item-images-"+item_data[i].Item_ID+"' role='listbox'>" + "<div class='item active "+item_data[i].Item_ID+"'><img src=" + item_data[i].Image_Path + "></div>";
+        page_element += "<p><div id='carousel-memories-"+item_data[i].Item_ID+"' class='carousel slide "+item_data[i].Item_ID+"' data-interval='false'><div class='carousel-inner' id='item-images-"+item_data[i].Item_ID+"' role='listbox'>" + "<div class='item active "+item_data[i].Item_ID+"'><img src=" + item_data[i].Image_Path + "></div>";
 
 
         if (item_data[i].Image_Path_2 != "") {
-            page_element += "<div class='item'><img src=" + item_data[i].Image_Path_2 + "></div>" + "<a class='left carousel-control' href='#carousel-memories-"+item_data[i].Item_ID+"' role='button' data-id='"+item_data[i].Item_ID+"' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a><a class='right carousel-control' href='#carousel-memories-"+item_data[i].Item_ID+"' role='button' data-id='"+item_data[i].Item_ID+"' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>" + "</div></div></p>";
+            page_element += "<div class='item'><img src=" + item_data[i].Image_Path_2 + "></div>" + "<a class='left carousel-control "+item_data[i].Item_ID+"' href='#carousel-memories-"+item_data[i].Item_ID+"' role='button "+item_data[i].Item_ID+"'' data-id='"+item_data[i].Item_ID+"' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a><a class='right carousel-control "+item_data[i].Item_ID+"' href='#carousel-memories-"+item_data[i].Item_ID+"' role='button "+item_data[i].Item_ID+"' data-id='"+item_data[i].Item_ID+"' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>" + "</div></div></p>";
         }
         else {
             page_element += "</div></div>";
         }
+
 
         if (item_data[i].Story != "") {
         page_element += "<p> <span class='item_label'>Story: </span>" + item_data[i].Story + "</p>";
@@ -178,7 +179,6 @@ function fantastic(item_data) {
     };
 
 };
-
 
 function transferID(item_id) {
         $.ajax({
