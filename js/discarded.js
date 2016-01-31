@@ -1,6 +1,5 @@
 jQuery(document).ready(function($){
 
-    console.log("Pete's version of discarded");
     
     //globals
     var item_data = [];

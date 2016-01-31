@@ -21,7 +21,7 @@
 	<script src="js/isotope.pkgd.min.js"></script>
 
 	<!-- Developer Javascript -->
-	<script src="js/discarded_pete.js"></script>
+	<script src="js/discarded.js"></script>
 
 
 	<!-- Custom Styles -->
