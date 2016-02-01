@@ -4,7 +4,7 @@ require_once 'utils.php';
 
 $lamp = "";
 
-$sql = "SELECT Date_Last_Worn FROM Item WHERE RFID_Tag != 0 AND Discarded = 1";
+$sql = "SELECT Date_Last_Worn FROM Item WHERE RFID_Tag != 0 AND Discarded = 1 AND Price = 40";
 $stmt = $db->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll(); //push the result in array

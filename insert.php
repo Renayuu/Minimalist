@@ -59,10 +59,14 @@ if(mysqli_query($conn, $sql)){
 mysqli_close($conn);
 ?>
 
-<div>
+<!-- <div>
     
 <form action="http://s4325075-minimalist.uqcloud.net/development.html">
     <input type="submit" value="Go Back">
 </form>
     
-</div>
+</div> -->
+
+<script type='text/javascript'>
+  window.location.href = "development.html";
+</script>
