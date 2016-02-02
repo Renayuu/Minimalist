@@ -15,6 +15,55 @@ $('document').ready(function()
 			$('#my_goal').text(currentGoal);
 			clothesLeft = numClothes - currentGoal;
 			$('#clothes_left').text(clothesLeft);
+
+		if (clothesLeft>=0) {
+			var doughnutOptions = {
+			//Number - The width of each segment stroke
+			segmentStrokeWidth : 1,
+			//The percentage of the chart that we cut out of the middle.
+			percentageInnerCutout : 70,
+			}
+
+			// Doughnut Chart Data
+			var doughnutData = [
+				{
+					value: numClothes-clothesLeft,
+					color:"#64688F"
+				},
+				{
+					value : clothesLeft,
+					color : "#aaa"
+				}
+			]
+
+			var rice = document.getElementById('rice').getContext('2d');
+			var donutChart = new Chart(rice).Doughnut(doughnutData, doughnutOptions);
+			$('#success').hide();
+			$('#goalItems').show();
+		}
+		else {
+			var doughnutOptions = {
+			//Number - The width of each segment stroke
+			segmentStrokeWidth : 1,
+			//The percentage of the chart that we cut out of the middle.
+			percentageInnerCutout : 70,
+			}
+
+			// Doughnut Chart Data
+			var doughnutData = [
+				{
+					value: 100,
+					color:"#64688F"
+				}
+				
+			]
+
+			var rice = document.getElementById('rice').getContext('2d');
+			var donutChart = new Chart(rice).Doughnut(doughnutData, doughnutOptions);
+			$('#success').show();
+			$('#goalItems').hide();
+		}
+		
 		},
 		error: function(err){
 			console.log(err);
@@ -36,12 +85,71 @@ $('document').ready(function()
 				console.log(numClothes - goalNum);
 				clothesLeft = numClothes - goalNum;
 				$('#clothes_left').text(clothesLeft);
+
+
+				if (clothesLeft>=0) {
+					var doughnutOptions = {
+					//Number - The width of each segment stroke
+					segmentStrokeWidth : 1,
+					//The percentage of the chart that we cut out of the middle.
+					percentageInnerCutout : 70,
+					}
+
+					// Doughnut Chart Data
+					var doughnutData = [
+						{
+							value: numClothes-clothesLeft,
+							color:"#64688F"
+						},
+						{
+							value : clothesLeft,
+							color : "#aaa"
+						}
+					]
+
+					var rice = document.getElementById('rice').getContext('2d');
+					rice.canvas.width = $('#rice').width(); // resize to parent width
+				  	rice.canvas.height = $('#rice').height(); // resize to parent height
+					var donutChart = new Chart(rice).Doughnut(doughnutData, doughnutOptions);
+					$('#success').hide();
+					$('#goalItems').show();
+				}
+				else {
+					var doughnutOptions = {
+					//Number - The width of each segment stroke
+					segmentStrokeWidth : 1,
+					//The percentage of the chart that we cut out of the middle.
+					percentageInnerCutout : 70,
+					}
+
+					// Doughnut Chart Data
+					var doughnutData = [
+						{
+							value: 100,
+							color:"#64688F"
+						}
+						
+					]
+
+					var rice = document.getElementById('rice').getContext('2d');
+					rice.canvas.width = $('#rice').width(); // resize to parent width
+				  	rice.canvas.height = $('#rice').height(); // resize to parent height
+					var donutChart = new Chart(rice).Doughnut(doughnutData, doughnutOptions);
+
+					$('#success').show();
+					$('#goalItems').hide();
+				}
+
 			},
 			error: function(err){
 				console.log(err);
 			}
 		});
+
+		
+
 	});
+
 });
 
 

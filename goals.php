@@ -1,4 +1,5 @@
 <?php include ("views/navbar.php"); ?>
+<script type="text/javascript" src = "js/Chart.min.js"></script>
 <script type="text/javascript" src = "js/goals.js"></script>
 
 
@@ -9,6 +10,9 @@
 <div id="info-box" class="col-sm-12 col-md-12">
 
 	<h1 align = "center">GOALS</h1>
+
+	<canvas id="rice" width="240" height="180px"></canvas>
+	
 
 	<h3 align="center">
             You own 
@@ -27,17 +31,22 @@
 
 	<br> 
 
-	<h3 align="center">
+	<h3 align="center" id="goalItems">
             You have 
             <b><span id="clothes_left">#</span></b>
             items left to reach your goal.
 	</h3>
+	<h3 id="success">Good Job! You reached your goal.</h3>
 
 	<br> 
-
-	<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center">
+	<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#editGoalModal" align="center"> 
 		  Edit Your Goal
 	</button>
+	<br>
+	  
+     
+
+	
 
 </div>
 
@@ -72,5 +81,4 @@
 	</div> <!-- end my modal -->
 
 </body>
-
 

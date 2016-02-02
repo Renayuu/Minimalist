@@ -443,3 +443,10 @@ img {
 .carousel-control {
 	bottom:14px;
 }
+
+#rice {
+	width: 400px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
