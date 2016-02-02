@@ -38,8 +38,8 @@
 			<h3 class="home-subheader">Why Minimize?</h3>
 			<div class="row">
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
-					<p class="home-point">More Income</p>
+					<img src="../images/home-mind-icon.png" class="home-icon" alt="Less clutter icon">
+					<p class="home-point">Clarity of Mind</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-time-icon.png" class="home-icon" alt="More free time icon">
@@ -47,7 +47,7 @@
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-clutter-icon.png" class="home-icon" alt="Less clutter icon">
-					<p class="home-point">Less Clutter</p>
+					<p class="home-point">No More Clutter</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-stress-icon.png" class="home-icon" alt="Less stress icon">
@@ -70,8 +70,8 @@
 					<p class="home-point">Only Wear Favorites</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
-					<img src="../images/home-mind-icon.png" class="home-icon" alt="Less clutter icon">
-					<p class="home-point">Clarity of Mind</p>
+					<img src="../images/home-income-icon.png" class="home-icon" alt="more disposable income icon">
+					<p class="home-point">Reduced Expenses</p>
 				</div>
 				<div class="col-md-3 col-sm-6 col-xs-6">
 					<img src="../images/home-clean-icon.png" class="home-icon" alt="Less stress icon">
