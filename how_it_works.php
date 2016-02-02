@@ -24,6 +24,12 @@ $image_url2=''
 		</font>
 		<br>
 		<h2><b>Closet Doors</b></h2>
+		<p><b>Goal Progress. </b>Visualised on the door of the closet will be a light representing the progress of the user's goal they they can set in the website. </p>
+		<p><b>Discarded Items. </b>The closet doors will also display images of items that the user hasn't worn in over 100 days, with the number of days since it was last worn. This serves as a constant visual reminder to users to encourage them to minimize.</p>
+
+		<img class="displayed" src="images/doors.jpg" align="middle">
+		<br>
+
 		<h2><b>StoryLamp</b></h2>
 		<p>The purpose of StoryLamp is to assist users in parting with unused sentimental clothing items. Some early feedback we received on our project indicated that even seeing the extent to which items have been neglected may not necessarily help users minimize if they experience attachment to their clothing items (which is particularly common among hoarders). StoryLamp was built in response to this feedback.</p>
 		<font align = "center">
