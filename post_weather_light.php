@@ -30,11 +30,11 @@ foreach ($result as $row)
 	
 	if (abs($temp_diff) < 5)
 	{
-		$light_colours .= "purple";
+		$light_colours .= "green";
 	}
 	else if ($temp_diff > 10) //current temperature is greater than the avg temp of the item, means the item is too hot to wear
 	{
-		$light_colours .= "red";
+		$light_colours .= "red2";
 	}
 	else if ($temp_diff < -10) //current temperature is smaller than the avg temp of the item, means the item is too cold to wear
 	{
@@ -44,7 +44,7 @@ foreach ($result as $row)
 	{
 		$light_colours .= "off";
 	}
-	$light_colours .= ",";
+	$light_colours .= ":";
 }
 
 echo $light_colours;
