@@ -20,7 +20,7 @@ $image_url2=''
 		<img class="displayed" src="images/rfid.jpg" align="middle">
 		</font>
 		<br>
-		<p>Minimize is intended for a future in which information is already embedded (via RFID tags) within clothing items by manufacturers at the point of production. When a user purchases or receives a new item of clothing, they can either scan it to their closet or manually add it to their account on the <a href="http://s4325075-minimalist.uqcloud.net/development.html">My Closet</a> page. Each day, users scan the items they decide to wear. Over time personal wearing data will be collected, forming a larger picture of the user's clothing habits. This information is then meaningfully presented back to the user in both digital and tangible ways.</p>
+		<p>Minimize is designed for a future in which RFID tags already embedded within clothing items at the point of production. When a user purchases or receives a new item of clothing, they can either scan it to their closet or manually add it to their account on the <a href="http://s4325075-minimalist.uqcloud.net/development.html">My Closet</a> page. Each day, users scan the items they decide to wear. Over time personal wearing data will be collected, forming a larger picture of the user's clothing habits. This information is then meaningfully presented back to the user in both digital and tangible ways.</p>
 		<h2><b>Closet Inside</b></h2>
 		<font align = "center">
 		<img class="displayed" src="images/closet.jpg" align="middle">
@@ -49,8 +49,6 @@ $image_url2=''
 		<p><b>Neglected Items. </b>The closet door also displays images of items that the user hasn't worn in over 100 days in addition to the number of days ago since those items were last worn. This serves as a constant visual reminder to encourage users to minimize.</p>
 		<br>
 		<img class="displayed" src="images/doors.jpg" align="middle">
-		<br>
-
 		<h2><b>StoryLamp</b></h2>
 		<p>The purpose of StoryLamp is to assist users in parting with unused sentimental clothing items. Some early feedback we received on our project indicated that even seeing the extent to which items have been neglected may not necessarily help users minimize if they experience attachment to their clothing items (which is particularly common among hoarders). StoryLamp was built in response to this feedback.</p>
 		<font align = "center">
