@@ -34,7 +34,7 @@ $image_url2=''
 		</font>
 		<br>
 		<br>
-		<p><b>The Appropriateness of the Item Given the Current Weather.</b> Visualizing this data can help users identify items to temporarily store away when they are not in season. (This is very similar to the concept of "capsule wardrobes.")</p>
+		<p><b>The Appropriateness of the Item Given the Current Temperature.</b> Visualizing this data can help users identify items to temporarily store away when they are not in season. (This is very similar to the concept of "capsule wardrobes.")</p>
 		<br>
 		<font align = "center">
 		<img class="displayed" src="images/temperature.jpg" align="middle">
@@ -46,7 +46,7 @@ $image_url2=''
 		</font>	
 		<h2><b>Closet Door</b></h2>
 		<p><b>Goal Progress. </b>On the closet door is a NeoPixel ring that allows users to visualize their progress towards meeting the numeric goal they set on the <a href="http://s4325075-minimalist.uqcloud.net/goal">Goals</a> page.</p>
-		<p><b>Discarded Items. </b>The closet door also displays images of items that the user hasn't worn in over 100 days in addition to the number of days ago since those items were last worn. This serves as a constant visual reminder to encourage users to minimize.</p>
+		<p><b>Neglected Items. </b>The closet door also displays images of items that the user hasn't worn in over 100 days in addition to the number of days ago since those items were last worn. This serves as a constant visual reminder to encourage users to minimize.</p>
 		<br>
 		<img class="displayed" src="images/doors.jpg" align="middle">
 		<br>
