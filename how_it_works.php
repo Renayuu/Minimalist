@@ -20,8 +20,8 @@ $image_url2=''
 		<img class="displayed" src="images/rfid.jpg" align="middle">
 		</font>
 		<br>
-		<p>Minimize is designed for a future in which RFID tags already embedded within clothing items at the point of production. When a user purchases or receives a new item of clothing, they can either scan it to their closet or manually add it to their account on the <a href="http://s4325075-minimalist.uqcloud.net/development.html">My Closet</a> page. Each day, users scan the items they decide to wear. Over time personal wearing data will be collected, forming a larger picture of the user's clothing habits. This information is then meaningfully presented back to the user in both digital and tangible ways.</p>
-		<h2><b>Closet Inside</b></h2>
+		<p>Minimize is designed for a future in which RFID tags are already embedded within clothing items at the point of production. When a user purchases or receives a new item of clothing, they can either scan it to their closet or manually add it to their account on the <a href="http://s4325075-minimalist.uqcloud.net/development.html">My Closet</a> page. Each day, users scan the items they decide to wear. Over time personal wearing data will be collected, forming a larger picture of the user's clothing habits. This information is then meaningfully presented back to the user in both digital and tangible ways.</p>
+		<h2><b>Closet Lights</b></h2>
 		<font align = "center">
 		<img class="displayed" src="images/closet.jpg" align="middle">
 		</font>
