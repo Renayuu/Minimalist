@@ -30,7 +30,7 @@ $image_url2=''
 		<p><b>The Number of Days Ago the Item was Last Worn.</b> Visualizing this data can aid users in easily recognizing the items they have neglected, which can prompt them to either use those items more or get rid of them so that they can be of use to someone else.</p>
 		<br>
 		<font align = "center">
-		<img class="displayed" src="images/dayslastworn.jpg" align="middle">
+		<img class="displayed" src="images/lastworn.jpg" align="middle">
 		</font>
 		<br>
 		<br>
