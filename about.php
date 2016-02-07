@@ -10,11 +10,15 @@ $image_url2=''
 <div class="container">
 
 	<h1 align = "center">About Minimize</h1>
-
+	<div class = "container" align = "center">
+	<iframe align = "center" width="640" height="360" src="https://www.youtube.com/embed/PJwV88OgcCA?rel=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<br>
+	<p></p>
 	<div class="container">
-		<p>Minimize is an Internet of Things project designed to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
+		<p align="justify">Minimize is an Internet of Things project designed to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
 
-		<p>Our goal with this project is to help users generate greater awareness about their clothing habits, to instigate behavioral and attitudinal change in regards to minimizing, and to encourage users to make more informed decisions regarding which items to keep and which items to part with.</p>
+		<p align="justify">Our goal with this project is to help users generate greater awareness about their clothing habits, to instigate behavioral and attitudinal change in regards to minimizing, and to encourage users to make more informed decisions regarding which items to keep and which items to part with.</p>
 
 
 		<p>Inspirations for Minimize include:</p>
