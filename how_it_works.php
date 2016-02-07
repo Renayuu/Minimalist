@@ -46,6 +46,12 @@ $image_url2=''
 		</font>	
 		<h2><b>Closet Door</b></h2>
 		<p align="justify"><b>Goal Progress. </b>On the closet door is a NeoPixel ring that allows users to visualize their progress towards meeting the numeric goal they set on the <a href="http://s4325075-minimalist.uqcloud.net/goal">Goals</a> page.</p>
+		<br>
+		<font align = "center">
+		<img class="displayed" src="images/goalpic.png" align="middle">
+		</font>
+		<br>
+		<br>
 		<p align="justify"><b>Neglected Items. </b>The closet door also displays images of items that the user hasn't worn in over 100 days in addition to the number of days ago since those items were last worn. This serves as a constant visual reminder to encourage users to minimize.</p>
 		<br>
 		<img class="displayed" src="images/doors.jpg" align="middle">
