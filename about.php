@@ -17,7 +17,17 @@ $image_url2=''
 	<p></p>
 	<div class="container">
 		<p align="justify">Minimize is an Internet of Things project designed to assist users in minimizing their wardrobe. This project was imagined and executed by Alyssa DiSalvo, Leila Watson, and Rena Yu (with great help from Pete Worthy) as part of the course DECO7000 Designing Connected Realities at the University of Queensland.</p>
-
+        
+        <p><br></p>
+        
+        <div class="container">
+         <div class="avatar_container">
+             <img src="../images/avatar_alyssa.png" class="col-md-4 col-xs-6" alt=""><img src="../images/avatar_leila.png" class="col-md-4 col-xs-6" alt=""><img src="../images/avatar_rena.png" class="col-md-4 col-xs-6" alt="">
+        </div>
+        </div>
+        <br>
+        <p></p>
+        <div></div>
 		<p align="justify">Our goal with this project is to help users generate greater awareness about their clothing habits, to instigate behavioral and attitudinal change in regards to minimizing, and to encourage users to make more informed decisions regarding which items to keep and which items to part with.</p>
 
 

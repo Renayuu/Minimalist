@@ -451,3 +451,9 @@ img {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+.avatar_container{
+    width: 75%;
+    margin: auto;
+
+}
